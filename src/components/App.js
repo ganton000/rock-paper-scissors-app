@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import './App.scss';
 
 const App = () => {
 
@@ -50,9 +49,7 @@ const App = () => {
 			<button type="submit">Play Game</button>
 
 			{startGame && (
-				<div class="emoji">
-					<div className="emoji--1">
-				</div>
+				<div>
 					<div
 					onClick={() => setSelectedChoice("Rock")}
 					className="emoji--1">
