@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import './App.scss';
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
 			<button type="submit">Play Game</button>
 
 			{startGame && (
-				<div>
+				<div class="emoji">
 					<div className="emoji--1">
 						&#128074;
 					</div>

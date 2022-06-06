@@ -8,7 +8,7 @@ const root = createRoot(container);
 
 
 root.render(
-	<div>
+	<div className="area">
 		<h1 className="title"> Rock, Paper &amp; Scissors</h1>
 		<App />
 	</div>
