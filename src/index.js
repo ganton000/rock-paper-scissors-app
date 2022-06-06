@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import App from './App';
+import App from './components/App';
 
 import './index.scss';
 
@@ -9,6 +9,7 @@ const root = createRoot(container);
 
 root.render(
 	<div>
+		<h1 className="title"> Rock, Paper &amp; Scissors</h1>
 		<App />
 	</div>
 )
