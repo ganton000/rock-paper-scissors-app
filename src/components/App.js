@@ -3,7 +3,9 @@ import React, { useState } from "react";
 
 const App = () => {
 
-	const [startGame, setStartGame] = useState(true)
+	const [startGame, setStartGame] = useState(true);
+
+
 
 	return (
 		<div className="appContainer">
