@@ -1,18 +1,21 @@
 button {
     margin: 0 auto;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 60px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     display: block;
     margin: 0 auto;
-    border-color: #a2c3c3;
-    border-radius: 25%;
+    color: whitesmoke;
+    background-color: #e6e6e64D;
+    border: 2px solid gray;
+    font-weight: bold;
+    border-radius: 10%;
 }
 
 .emoji {
     display: block;
-    width: 400px;
+    width: 500px;
     position: relative;
     margin: 0 auto;
     margin-top: 4rem;
@@ -20,7 +23,14 @@ button {
 }
 
 .emoji--1, .emoji--2, .emoji--3 {
+    border: 1px solid gray;
     font-size: 8rem;
-    display: inline;
-    margin-left: 5.5rem;
+    text-align: center;
+    display: inline-block;
+    background-color: #e6e6e64D;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 4rem;
+    padding: 4px;
 }

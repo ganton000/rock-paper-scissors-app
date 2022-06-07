@@ -50,7 +50,7 @@ const App = () => {
 			<button type="submit">Play Game</button>
 
 			{startGame && (
-				<div>
+				<div className="emoji">
 					<div
 					onClick={() => setSelectedChoice("Rock")}
 					className="emoji--1">
