@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 button {
     margin-bottom: 4rem;
     width: 12rem;
@@ -15,43 +16,46 @@ button {
     border: 2px solid gray;
     font-weight: bold;
     border-radius: 10%;
+
     &:hover{
         cursor: pointer;
     }
 }
 
-.emoji--1 {
-    background: linear-gradient(to right, rgb(227, 118, 106), rgb(255, 13, 13));
-}
-.emoji--2 {
-    background: linear-gradient(to right, rgb(79, 255, 79), rgb(80, 188, 118));
-}
-.emoji--3 {
-    background: linear-gradient(to right, rgb(83, 238, 251), rgb(14, 68, 254));
-}
 .emoji {
     display: flex;
     justify-content: space-evenly;
     width: 50rem;
     position: relative;
     margin-bottom: 8rem;
-}
 
-.emoji--1, .emoji--2, .emoji--3 {
-    border: 1px solid gray;
-    font-size: 8rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items:  center;
-    background-color: #e6e6e6e2;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    padding: 4px;
-    &:hover {
-            cursor: pointer;
-        }
+    &--rock, &--paper, &--scissors {
+        border: 1px solid gray;
+        font-size: 8rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items:  center;
+        background-color: #e6e6e6e2;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        padding: 4px;
+
+        &:hover {
+                cursor: pointer;
+            }
+    }
+
+    &--rock {
+        background: linear-gradient(to right, rgb(227, 118, 106), rgb(255, 13, 13));
+    }
+    &--paper {
+        background: linear-gradient(to right, rgb(79, 255, 79), rgb(80, 188, 118));
+    }
+    &--scissors {
+        background: linear-gradient(to right, rgb(83, 238, 251), rgb(14, 68, 254));
+    }
 }
 
 h2 {
