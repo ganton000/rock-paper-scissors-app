@@ -8,13 +8,16 @@ const App = () => {
 	const [round, setRound] = useState(5);
 	const [startGame, setStartGame] = useState(false);
 	const [result, setResult] = useState(false);
-	const [selectedChoice, setSelectedChoice] = useState(false);
+	const [selectedChoice, setSelectedChoice] = useState(null);
 
 
 	const playGame = (selectedChoice) => {
 
-		const choicesArr = ['Rock', 'Paper', 'Scissors']
+		const choicesArr = ['rock', 'paper', 'scissors']
 		const compChoice = choicesArr[Math.floor(Math.random() * 3)]
+
+		console.log(compChoice, selectedChoice)
+		console.log(userScore, compScore)
 
 		if (selectedChoice === compChoice) {
 			return 'Draw!'
@@ -57,46 +60,51 @@ const App = () => {
 	return (
 		<div className="appContainer">
 
-		{!startGame && (<button onClick={() => setStartGame(true)}
-				type="submit">Play Game</button>
-
-			)
-}
+			{!startGame && (
+			<button onClick={() => setStartGame(true)}
+			type="submit">
+				Play Game
+			</button>
+			)}
 			{startGame && !selectedChoice && (// renders main gameplay
 				<div>
 					<h2>Select a move!</h2>
-				<div className="emoji">
-
-						<img onClick={() => setSelectedChoice("Rock")}
-							className="emoji--1" src={require("../images/rock.png")} alt={"Rock"} />
-
-
-						<img onClick={() => setSelectedChoice("Paper")}
-							className="emoji--2" src={require("../images/paper.png")} alt={"Paper"} />
-
-						<img onClick={() => setSelectedChoice("Scissors")}
-					className="emoji--3" src={require("../images/scissors.png")} alt={"Scissors"} />
+					<div className="emoji">
+						<img
+						onClick={() => setSelectedChoice("rock")}
+						className="emoji--rock"
+						src={require("../images/rock.png")}
+						alt={"Rock"} />
+						<img
+						onClick={() => setSelectedChoice("paper")}
+						className="emoji--paper"
+						src={require("../images/paper.png")}
+						alt={"Paper"} />
+						<img
+						onClick={() => setSelectedChoice("scissors")}
+						className="emoji--scissors"
+						src={require("../images/scissors.png")}
+						alt={"Scissors"} />
 					</div>
-
 				</div>
 			)}
 
 			{startGame && selectedChoice && round !== 0 &&(// Renders for user to choose the next round.
-				<div>
-					<h2>{result}</h2>
-
-					<button onClick={()=>setSelectedChoice(false)}>Next Round</button>
-				</div>
+			<div>
+				<h2>{result}</h2>
+				<button onClick={()=>setSelectedChoice(false)}>
+					Next Round
+				</button>
+			</div>
 			) }
 			{startGame && selectedChoice && round === 0 && (// renders the game result
 				<div>
 					<h2>User: {userScore} Computer: {compScore}</h2>
 					<h2>{gameResult(compScore,userScore)}</h2>
-
 				</div>
 			)}
 		</div>
 	)
-}
+};
 
 export default App;
