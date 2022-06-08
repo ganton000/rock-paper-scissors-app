@@ -1,0 +1,25 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = "postgres://admin:admin@localhost:5432/postgres"
+}
+
+model User {
+    userId      String   @id @default(cuid())
+    username    String
+    email       String   @unique
+    password    String
+    firstName   String
+    lastName    String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    timesPlayed Int      @default(0)
+    won         Int      @default(0)
+    lost        Int      @default(0)
+    score       Int      @default(0)
+    theme       String   @default("light")
+
+}
