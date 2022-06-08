@@ -19,9 +19,7 @@ button {
         cursor: pointer;
     }
 }
-img {
-    
-}
+
 .emoji--1 {
     background: linear-gradient(to right, rgb(227, 118, 106), rgb(255, 13, 13));
 }
@@ -51,6 +49,9 @@ img {
     height: 100px;
     border-radius: 50%;
     padding: 4px;
+    &:hover {
+            cursor: pointer;
+        }
 }
 
 h2 {
