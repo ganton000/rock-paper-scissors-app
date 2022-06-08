@@ -15,6 +15,9 @@ button {
     border: 2px solid gray;
     font-weight: bold;
     border-radius: 10%;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .emoji {
