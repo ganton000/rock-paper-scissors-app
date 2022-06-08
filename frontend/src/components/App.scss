@@ -5,9 +5,9 @@
 }
 button {
     margin-bottom: 4rem;
-    width: 120px;
-    height: 60px;
-    font-size: 20px;
+    width: 12rem;
+    height: 6rem;
+    font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     display: block;
     color: whitesmoke;
@@ -32,7 +32,7 @@ button {
 .emoji {
     display: flex;
     justify-content: space-evenly;
-    width: 500px;
+    width: 50rem;
     position: relative;
     margin-bottom: 8rem;
 }
@@ -45,8 +45,8 @@ button {
     justify-content: center;
     align-items:  center;
     background-color: #e6e6e6e2;
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     padding: 4px;
     &:hover {

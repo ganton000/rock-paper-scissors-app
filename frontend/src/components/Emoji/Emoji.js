@@ -6,7 +6,7 @@ const Emoji = ({ emojiType }) => {
 
 	return (
 		<img
-		className={`emoji--${emojiType}`}
+		className={`emoji emoji--${emojiType}`}
 		src={require(`../../images/${emojiType}.png`)}
 		alt={`{emojiType}`} />
 	)
