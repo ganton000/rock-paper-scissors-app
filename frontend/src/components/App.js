@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import Emoji from './Emoji/Emoji';
+
 import './App.scss'
 
 const App = () => {
@@ -10,11 +12,15 @@ const App = () => {
 	const [result, setResult] = useState(false);
 	const [selectedChoice, setSelectedChoice] = useState(null);
 
+	const emojisArr = ['rock', 'paper','scissors'];
+
+	const onHandleClick = (move) => {
+		setSelectedChoice(move);
+	};
 
 	const playGame = (selectedChoice) => {
 
-		const choicesArr = ['rock', 'paper', 'scissors']
-		const compChoice = choicesArr[Math.floor(Math.random() * 3)]
+		const compChoice = emojisArr[Math.floor(Math.random() * 3)]
 
 		console.log(compChoice, selectedChoice)
 		console.log(userScore, compScore)
@@ -70,21 +76,12 @@ const App = () => {
 				<div>
 					<h2>Select a move!</h2>
 					<div className="emoji">
-						<img
-						onClick={() => setSelectedChoice("rock")}
-						className="emoji--rock"
-						src={require("../images/rock.png")}
-						alt={"Rock"} />
-						<img
-						onClick={() => setSelectedChoice("paper")}
-						className="emoji--paper"
-						src={require("../images/paper.png")}
-						alt={"Paper"} />
-						<img
-						onClick={() => setSelectedChoice("scissors")}
-						className="emoji--scissors"
-						src={require("../images/scissors.png")}
-						alt={"Scissors"} />
+						{emojisArr.map(emoji => (
+							<Emoji
+							handleClick={onHandleClick}
+							emojiType={emoji}
+							/>
+						))}
 					</div>
 				</div>
 			)}

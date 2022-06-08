@@ -1,0 +1,27 @@
+.emoji--rock, .emoji--paper, .emoji--scissors {
+	border: 1px solid gray;
+	font-size: 8rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items:  center;
+	background-color: #e6e6e6e2;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	padding: 4px;
+
+	&:hover {
+			cursor: pointer;
+		}
+}
+
+.emoji--rock {
+	background: linear-gradient(to right, rgb(227, 118, 106), rgb(255, 13, 13));
+}
+.emoji--paper {
+	background: linear-gradient(to right, rgb(79, 255, 79), rgb(80, 188, 118));
+}
+.emoji--scissors {
+	background: linear-gradient(to right, rgb(83, 238, 251), rgb(14, 68, 254));
+}
