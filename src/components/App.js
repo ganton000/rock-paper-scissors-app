@@ -21,32 +21,32 @@ const App = () => {
 			case "Rock":
 				if (computerChoice === 'Scissors') {
 					setScore((prevScore) => prevScore + 1)
-					return "You win"
+					return 'You win'
 				} else if (computerChoice === 'Rock') {
 					return 'Draw!'
 				} else { 
 					setCompScore((prevScore) => prevScore + 1)
-					return "You lose!" }
+					return 'You Lose!' }
 
 			case "Paper":
 				if (computerChoice === 'Rock') {
 					setScore((prevScore) => prevScore + 1)
-					return "You win"
+					return 'You win'
 				} else if (computerChoice === 'Paper') {
 					return 'Draw!'
 				} else { 
 					setCompScore((prevScore) => prevScore + 1)
-					return "You lose!" }
+					return 'You Lose!'}
 
 			case "Scissors":
 				if (computerChoice === 'Paper') {
 					setScore((prevScore) => prevScore + 1)
-					return "You win"
+					return 'You win'
 				} else if (computerChoice === 'Scissors') {
 					return 'Draw!'
 				} else { 
 					setCompScore((prevScore) => prevScore + 1)
-					return "You lose!" }
+					return 'You Lose!' }
 
 			default:
 				return;
@@ -54,9 +54,9 @@ const App = () => {
 	}
 	const gameResult = (compScore, userscore) => {
 					if (userscore > compScore) {
-						return "You Beat the Computer!"
+						return 'You Beat the Computer!'
 					} else {
-						return "You lost to a robot LOSER!"
+						return 'You lost to a robot LOSER!'
 					}
 	}
 	useEffect(() => {
@@ -115,7 +115,7 @@ const App = () => {
 			) }
 			{startGame && selectedChoice && round === 0 && (
 				<div>
-					<h2>User:{score} Computer:{compScore}</h2>
+					<h2>User: {score} Computer: {compScore}</h2>
 					<h2>{gameResult()}</h2>
 
 				</div>
