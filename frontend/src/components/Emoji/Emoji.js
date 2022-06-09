@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './Emoji.scss';
-
 const Emoji = ({ emojiType, handleClick }) => {
   return (
     <div className="emoji--container">

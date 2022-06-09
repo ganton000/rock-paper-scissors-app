@@ -2,8 +2,6 @@ import React from "react";
 
 import Button from '../../components/Button/Button';
 
-import './SignUpForm.scss';
-
 const SignUpForm = () => {
   return (
     <div className='signup--container'>
@@ -13,11 +11,11 @@ const SignUpForm = () => {
       </div>
       <form>
         <label htmlFor="username">Username</label>
-        <input id='username' type='text'>Username</input>
+        <input id='username' type='text' />
         <label htmlFor="email">Email</label>
-        <input id='email' type='email'>Email</input>
+        <input id='email' type='email' />
         <label htmlFor="password">Password</label>
-        <input id='password' type='password'>Password</input>
+        <input id='password' type='password' />
         <Button type='submit'>Sign Up</Button>
       </form>
       <p> OR </p>

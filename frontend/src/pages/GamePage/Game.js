@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import Emoji from '../../components/Emoji/Emoji';
 
-import './Game.scss'
-
 const Game = () => {
 
 	const [userScore, setUserScore] = useState(0)

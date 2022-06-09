@@ -5,7 +5,6 @@ import Home from '../pages/LandingPage/Home';
 import Game from '../pages/GamePage/Game';
 import Authentication from "../pages/Authentication/Authentication";
 
-import './App.scss'
 
 const App = () => {
 
