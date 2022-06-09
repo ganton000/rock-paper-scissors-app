@@ -1,3 +1,6 @@
+@import './sass/variable';
+@import './sass/animations';
+
 @import './components/App';
 @import './index.scss';
 
@@ -10,5 +13,3 @@
 @import './pages/GamePage/Game';
 @import './pages/LandingPage/Home';
 
-@import './sass/animations';
-@import './sass/variable';
