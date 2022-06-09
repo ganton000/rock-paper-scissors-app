@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import Button from '../../components/Button/Button';
 
 import './Home.scss';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='home'>
       <img
@@ -11,8 +15,16 @@ const Home = () => {
       src={require('../../images/bg.jpg')}
       alt="battle royal of a rock, paper and scissor caricature" />
       <div className='btn__container'>
-        <Link to='game'>Play Now!</Link>
-        <Link to='auth'>Login</Link>
+        <Link style={{textDecoration: 'none'}} to='game'>
+          <Button>
+            Play Now!
+          </Button>
+        </Link>
+        <Link style={{textDecoration: 'none'}} to='auth'>
+          <Button>
+            Login
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,0 +1,11 @@
+.signup--container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40vw;
+	max-width: 50rem;
+}
+.signup--header {
+	font-size: 8rem;
+	font-weight: 500;
+}
