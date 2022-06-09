@@ -1,0 +1,38 @@
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin-bottom: 4rem;
+    width: 12rem;
+    height: 6rem;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    color: whitesmoke;
+    background-color: #e6e6e64D;
+    border: 2px solid gray;
+    font-weight: bold;
+    border-radius: 10%;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.emoji {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50rem;
+    position: relative;
+    margin-bottom: 8rem;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2vh;
+}

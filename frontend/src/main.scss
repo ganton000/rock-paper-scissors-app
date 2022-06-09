@@ -1,0 +1,15 @@
+@import './sass/variable';
+@import './sass/animations';
+
+@import './components/App';
+@import './index.scss';
+
+@import './components/Button/Button';
+@import './components/Emoji/Emoji';
+@import './components/SignInForm/SignInForm';
+@import './components/SignUpForm/SignUpForm';
+
+@import './pages/Authentication/Authentication';
+@import './pages/GamePage/Game';
+@import './pages/LandingPage/Home';
+
