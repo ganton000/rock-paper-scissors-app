@@ -63,7 +63,7 @@ const Game = () => {
 	};
 
 	return (
-		<div className="appContainer">
+		<div className="gameContainer">
 
 			{!startGame && (
 			<button onClick={() => setStartGame(true)}

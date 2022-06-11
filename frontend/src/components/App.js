@@ -8,6 +8,7 @@ import SignUpForm from "./SignUpForm/SignUpForm";
 import SignInForm from "./SignInForm/SignInForm";
 import GuestForm from "./GuestForm/GuestForm";
 import Title from './Title/Title';
+import GameCard from "./GameCard/GameCard";
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
 					<Route path="game" element={<Game />}/>
 					<Route path='signIn' element={<SignInForm />}/>
 					<Route path='signUp' element={<SignUpForm />}/>
+					<Route path='test' element={<GameCard />} />
 					<Route path='guest' element={<GuestForm />}/>
 				</Routes>
 			</div>
