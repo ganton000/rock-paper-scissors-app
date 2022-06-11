@@ -6,17 +6,22 @@
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 12vw;
+	font-size: 8vw;
 	font-family: inherit;
+	font-weight: 800;
 	height: fit-content;
 	bottom: 0;
 	top:0;
 
 	& > span {
 		display: inline-block;
-		text-shadow: 0 0 0 black;
+		text-shadow: 0 0 0 #00000080;
 		animation-duration: 10s;
 		animation-iteration-count: 1;
+
+		&:not(:last-child) {
+			margin-right: -.5rem;
+		}
 
 		&:nth-child(1) {
 			animation-name: fallLeftAndRise;
@@ -35,6 +40,7 @@
 		&:nth-child(4) {
 			animation-name: fallLeftAndRise;
 			animation-delay: .8s;
+			margin-right: 7rem;
 		}
 
 		&:nth-child(5) {
@@ -60,6 +66,7 @@
 		&:nth-child(9) {
 			animation-name: fallLeftAndRise;
 			animation-delay: .20s;
+			margin-right: 7rem;
 		}
 
 		&:nth-child(10) {
