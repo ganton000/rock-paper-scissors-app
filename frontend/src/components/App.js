@@ -7,18 +7,24 @@ import Authentication from "../pages/Authentication/Authentication";
 import SignUpForm from "./SignUpForm/SignUpForm";
 import SignInForm from "./SignInForm/SignInForm";
 import GuestForm from "./GuestForm/GuestForm";
+import Title from './Title/Title';
 
 
 const App = () => {
 
 	return (
-		<Routes>
-			<Route path='/' element={<Home />} />
-			<Route path="game" element={<Game />}/>
-			<Route path='signIn' element={<SignInForm />}/>
-			<Route path='signUp' element={<SignUpForm />}/>
-			<Route path='guest' element={<GuestForm />}/>
-		</Routes>
+		<>
+			<Title />
+			<div className='app--container'>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path="game" element={<Game />}/>
+					<Route path='signIn' element={<SignInForm />}/>
+					<Route path='signUp' element={<SignUpForm />}/>
+					<Route path='guest' element={<GuestForm />}/>
+				</Routes>
+			</div>
+		</>
 	)
 };
 
