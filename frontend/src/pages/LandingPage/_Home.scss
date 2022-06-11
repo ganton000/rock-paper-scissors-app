@@ -9,4 +9,72 @@
 	gap: 5rem;
 	padding: 2rem;
 	justify-content: center;
+	width: 80rem;
+	position: relative;
+	top: 13rem;
 }
+
+.select:hover::after {
+	border-radius: 2rem;
+	display: block;
+	position: relative;
+	z-index: 1;
+	content: '';
+	height: 0;
+	width: 100%;
+	top: -19rem;
+	left: 0;
+	background: black;
+	opacity: 0.4;
+	animation: fill 0.3s ease-in-out forwards;
+}
+
+.select {
+	border-radius: 2rem;
+	box-shadow: 2px 2px 6px black;
+}
+
+.select:hover {
+	transform: scale(1.3);
+}
+
+.rock {
+	background-color: #885053;
+	border: 2px solid #5A3537;
+}
+
+.paper {
+	background-color: #1E91D6;
+	border: 2px solid #12547D;
+}
+
+.scissor {
+	background-color: #D999B9;
+	border: 2px solid #86325C;
+}
+
+img {
+	width: 150px;
+	height: 150px;
+}
+
+h4 {
+	font-family: 'Roboto', sans-serif;
+	color: whitesmoke;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 3rem;
+	position: relative;
+	top: -1rem;
+}
+
+
+
+@keyframes fill {
+	from {
+	  height: 0;
+	}
+	to {
+	  height: 102%;
+	}
+  }

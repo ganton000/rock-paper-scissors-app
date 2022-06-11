@@ -1,5 +1,17 @@
-.signIn {
-	background-color: #885053;
+.guest--container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+.guest--header {
+	font-weight: 500;
+	width: 100%;
+}
+
+.guest {
+	background-color: #D999B9;
 	height: 5rem;
 	width: 50rem;
 	position: relative;
@@ -9,14 +21,14 @@
 	box-shadow: 2px 2px 3px gray;
 }
 
-.secondaryIn {
+.secondaryGuest {
 	border-radius: 0.5rem;
 	height: 5rem;
 	width: 24rem;
-	background-color: #885053;
+	background-color: #D999B9;
 	border: 2px solid rgba(191, 191, 191, 0.7);
 	display: inline-block;
 	text-align: center;
-	padding-bottom: 1rem;
+	padding-bottom: 0;
 	box-shadow: 2px 2px 3px gray;
 }
