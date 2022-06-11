@@ -1,17 +1,10 @@
 import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
-
-import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const navigate = useNavigate();
 
   return (
     <div className='home'>
-      {/*<img
-      className='home--img'
-      src={require('../../images/bg.jpg')}
-      alt="battle royal of a rock, paper and scissor caricature" />*/}
       <div className='btn__container'>
       <Link className='select rock' style={{textDecoration: 'none'}} to='signIn'>
         <div>
@@ -19,11 +12,6 @@ const Home = () => {
           src={require('../../images/rock1.png')}
           alt="battle royal of a rock, paper and scissor caricature" />
           <h4>Login</h4>
-          {/*
-            <Button>
-              Play Now!
-            </Button>
-          */}
         </div>
         </Link>
         <Link className='select paper' style={{textDecoration: 'none'}} to='signUp'>

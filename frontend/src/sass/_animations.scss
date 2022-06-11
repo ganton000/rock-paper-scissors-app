@@ -7,7 +7,6 @@
     }
 }
 
-
 @keyframes fill {
 	from {
 	  height: 0;
@@ -43,3 +42,36 @@
     }
 }
 
+@keyframes hue-rotate {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+}
+
+
+@keyframes fallLeftAndRise {
+    0% {
+      transform: translateY(-200%) skew(50deg);
+      opacity: 0;
+      text-shadow: 0 0 5rem;
+    }
+    50% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+}
+
+@keyframes fallRightAndRise{
+    0% {
+        transform: translateY(-200%) skew(-50deg);
+        opacity: 0;
+        text-shadow: 0 0 5rem;
+      }
+      50% {
+        transform: translateY(100%);
+        opacity: 1;
+      }
+  }

@@ -1,0 +1,102 @@
+.game--title {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	height: fit-content;
+	bottom: 0;
+	top:0;
+
+	& > span {
+		display: inline-block;
+		text-shadow: 0 0 0 black;
+		animation-duration: 10s;
+		animation-iteration-count: 1;
+
+		&:nth-child(1) {
+			animation-name: fallLeftAndRise;
+		}
+
+		&:nth-child(2) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .3s;
+		}
+
+		&:nth-child(3) {
+			animation-name: fallRightAndRise;
+			animation-delay: .5s;
+		}
+
+		&:nth-child(4) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .8s;
+		}
+
+		&:nth-child(5) {
+			animation-name: fallRightAndRise;
+			animation-delay: .10s;
+		}
+
+		&:nth-child(6) {
+			animation-name: fallRightAndRise;
+			animation-delay: .13s;
+		}
+
+		&:nth-child(7) {
+			animation-name: fallRightAndRise;
+			animation-delay: .15s;
+		}
+
+		&:nth-child(8) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .17s;
+		}
+
+		&:nth-child(9) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .20s;
+		}
+
+		&:nth-child(10) {
+			animation-name: fallRightAndRise;
+			animation-delay: .22s;
+		}
+
+		&:nth-child(11) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .25s;
+		}
+
+		&:nth-child(12) {
+			animation-name: fallRightAndRise;
+			animation-delay: .27s;
+		}
+
+		&:nth-child(13) {
+			animation-name: fallRightAndRise;
+			animation-delay: .29s;
+		}
+
+		&:nth-child(14) {
+			animation-name: fallRightAndRise;
+			animation-delay: .31s;
+		}
+
+		&:nth-child(15) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .33s;
+		}
+
+		&:nth-child(16) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .35s;
+		}
+
+		&:nth-child(17) {
+			animation-name: fallLeftAndRise;
+			animation-delay: .37s;
+		}
+	}
+}
