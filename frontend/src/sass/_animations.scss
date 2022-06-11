@@ -1,7 +1,45 @@
-
-.area {
-    //background-image: linear-gradient(#3e5151 , #decba4);
-    //background-color: gray;
-    //background: rgba(128, 128, 128, 0.4);
-    background: rgba(191, 191, 191, 0.8);
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
 }
+
+
+@keyframes fill {
+	from {
+	  height: 0;
+	}
+	to {
+	  height: 102%;
+	}
+}
+
+@keyframes slide-right {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 0%;
+    }
+  }
+@keyframes slide-left {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0%;
+    }
+}
+
+@keyframes slide-up {
+    from {
+      bottom: -100%;
+    }
+    to {
+      bottom: 0%;
+    }
+}
+

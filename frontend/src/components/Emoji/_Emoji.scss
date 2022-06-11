@@ -56,37 +56,3 @@
     animation: slide-left 0.5s ease-in-out;
   }
 }
-
-/* Animations */
-@keyframes slide-right {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-@keyframes slide-left {
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0%;
-  }
-}
-@keyframes slide-up {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: 0%;
-  }
-}
-@keyframes fill {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
-}
