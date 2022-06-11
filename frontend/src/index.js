@@ -10,8 +10,7 @@ const root = createRoot(container);
 
 root.render(
 	<BrowserRouter>
-		<div className="area">
-			<h1 className="title">
+		<h1 className="title">
 				<span className="letters--1">R</span>
 				<span className="letters--2">O</span>
 				<span className="letters--3">C</span>
@@ -32,6 +31,7 @@ root.render(
 				<span className="letters--16">R</span>
 				<span className="letters--17">S</span>
 			</h1>
+		<div className="area">
 			<App />
 		</div>
 	</BrowserRouter>

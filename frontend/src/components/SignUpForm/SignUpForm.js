@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../../components/Button/Button';
 
@@ -6,26 +7,40 @@ const SignUpForm = () => {
   return (
     <div className='signup--container'>
       <div className='signup--header'>
-        <h2>Join Now</h2>
-        <h4>and Start Playing!</h4>
+      <Link style={{textDecoration: 'none'}} to='/'>
+        <img className='back' src={require('../../images/back-button.png')} />
+      </Link>
+        <h2 className='top'>Join Now and Start Playing Today!</h2>
       </div>
       <form>
-        <label htmlFor="username">Username</label>
-        <input id='username' type='text' />
+        <div className='name'>
+          <label htmlFor="firstName">First Name</label>
+          <input id='firstName' type='text' />
+        </div>
+        <div className='name last'>
+          <label htmlFor="lastName">Last Name</label>
+          <input id='lastName' type='text' />
+        </div>
         <label htmlFor="email">Email</label>
         <input id='email' type='email' />
-        <label htmlFor="password">Password</label>
-        <input id='password' type='password' />
-        <Button type='submit'>Sign Up</Button>
+        <div className='name'>
+          <label htmlFor="username">Username</label>
+          <input id='username' type='text' />
+        </div>
+        <div className='name last'>
+          <label htmlFor="password">Password</label>
+          <input id='password' type='password' />
+        </div>
+        <button type='submit' className='signUp'>Sign Up</button>
       </form>
-      <p> OR </p>
+      <p className='or'> OR </p>
       <div className='signup--container-btn'>
-        <Button className='btn signup'>
-          Sign up with Google
-        </Button>
-        <Button className='btn signup'>
+        <button className='secondaryUp'>
+          Sign up with Google <img className='icon' src={require('../../images/google.png')} />
+        </button>
+        <button className='secondaryUp second'>
           Sign up with Facebook
-        </Button>
+        </button>
       </div>
 
     </div>

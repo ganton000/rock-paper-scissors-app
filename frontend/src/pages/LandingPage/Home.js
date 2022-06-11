@@ -8,20 +8,39 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <img
+      {/*<img
       className='home--img'
       src={require('../../images/bg.jpg')}
-      alt="battle royal of a rock, paper and scissor caricature" />
+      alt="battle royal of a rock, paper and scissor caricature" />*/}
       <div className='btn__container'>
-        <Link style={{textDecoration: 'none'}} to='game'>
-          <Button>
-            Play Now!
-          </Button>
+      <Link className='select rock' style={{textDecoration: 'none'}} to='signIn'>
+        <div>
+          <img
+          src={require('../../images/rock1.png')}
+          alt="battle royal of a rock, paper and scissor caricature" />
+          <h4>Login</h4>
+          {/*
+            <Button>
+              Play Now!
+            </Button>
+          */}
+        </div>
         </Link>
-        <Link style={{textDecoration: 'none'}} to='auth'>
-          <Button>
-            Login
-          </Button>
+        <Link className='select paper' style={{textDecoration: 'none'}} to='signUp'>
+        <div>
+          <img
+          src={require('../../images/paper1.png')}
+          alt="battle royal of a rock, paper and scissor caricature" />
+          <h4>Join</h4>
+        </div>
+        </Link>
+        <Link className='select scissor' style={{textDecoration: 'none'}} to='guest'>
+          <div>
+            <img
+            src={require('../../images/scissor1.png')}
+            alt="battle royal of a rock, paper and scissor caricature" />
+            <h4>Guest</h4>
+          </div>
         </Link>
       </div>
     </div>
