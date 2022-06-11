@@ -13,6 +13,7 @@ const signInUser = async (req: Request, res: Response) => {
                 email: email.toLowerCase(),
             }
         })
+        console.log(user);
         if (!user) {
             res.status(401).json({
                 success: false,
@@ -66,7 +67,7 @@ const signUpUser = async (req: Request, res: Response) => {
         await prisma.user.create({ data })
         res.status(201).json({
             success: true,
-            message: "User created successfully"
+            message: "User created successfully",
         })
     }
     catch (error) {
@@ -84,7 +85,8 @@ const signOutUser = async (req: Request, res: Response) => {
     res.cookie("Rtoken", "", { httpOnly: true, maxAge: 60 });
     res.status(200).json({
         success: true,
-        message: "User signed out successfully"
+        message: "User signed out successfully",
+
     })
 
 }
