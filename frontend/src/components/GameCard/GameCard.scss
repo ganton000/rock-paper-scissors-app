@@ -3,40 +3,57 @@
 	width: $card-width;
 	height: $card-height;
 	position: relative;
-	border-radius: 6px;
+	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 5rem;
+	padding: 12rem;
 	font-size: 6rem;
 	margin-left: 5rem;
 	margin-top: 5rem;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.8);
 	cursor: pointer;
+	//so rotate can push out towards page
+	//FUNCTIONALITY
+	perspective: 150rem;
+	-moz-perspective: 150rem;
+
+	&:active &--front {
+		transform: rotateY(-180deg);
+	}
+
+	&:active &--back {
+		transform:  rotateY(0);
+	}
 
 	& > img {
 		position: absolute;
 		transition: 2s;
-		opacity: 0;
-		z-index: -2;
+		//opacity: 0;
+		//z-index: -2;
 	}
 
-	&:hover {
-		color: rgb(88 199 250 /100%);
-		transition: color 2s;
+	//&:hover {
+	//	color: rgb(88 199 250 /100%);
+	//	transition: color 2s;
 
-		img {
-			transform: translateY(-175%);
-			opacity: 1;
-			z-index: 1;
-		}
-	}
+	//	img {
+	//		transform: translateY(-175%);
+	//		opacity: 1;
+	//		z-index: 1;
+	//	}
+	//}
 
 	&--name {
-		opacity: 0;
+		//opacity: 0;
+		position: absolute;
+		top: 0;
+		transform: translateY(40%);
 
-		&:hover {
-			opacity: 1;
-			transition: opacity 1.5s;
-		}
+		//&:hover {
+		//	opacity: 1;
+		//	transition: opacity 1.5s;
+		//}
 	}
 }

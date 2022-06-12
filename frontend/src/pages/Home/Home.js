@@ -9,7 +9,7 @@ const Home = () => {
       <Link className='select rock' style={{textDecoration: 'none'}} to='signIn'>
         <div>
           <img
-          src={require('../../images/rock1.png')}
+          src={require('../../images/rock.png')}
           alt="battle royal of a rock, paper and scissor caricature" />
           <h4>Login</h4>
         </div>
@@ -17,7 +17,7 @@ const Home = () => {
         <Link className='select paper' style={{textDecoration: 'none'}} to='signUp'>
         <div>
           <img
-          src={require('../../images/paper1.png')}
+          src={require('../../images/paper.png')}
           alt="battle royal of a rock, paper and scissor caricature" />
           <h4>Join</h4>
         </div>
@@ -25,7 +25,7 @@ const Home = () => {
         <Link className='select scissor' style={{textDecoration: 'none'}} to='guest'>
           <div>
             <img
-            src={require('../../images/scissor1.png')}
+            src={require('../../images/scissors.png')}
             alt="battle royal of a rock, paper and scissor caricature" />
             <h4>Guest</h4>
           </div>

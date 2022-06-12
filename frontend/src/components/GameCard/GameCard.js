@@ -1,13 +1,15 @@
 import React from 'react'
 
-const GameCard = ({ compChoice }) => {
+const GameCard = ({ emojiType, result, handleClick }) => {
   return (
     <>
-      <div className='card'>
-        <p className='card--name'>{compChoice}</p>
+      <div
+      onClick={() => handleClick(emojiType)}
+      className='card'>
+        <p className='card--name'>{result}</p>
         <img
-        src={require(`../../images/${compChoice}.png`)}
-        alt={`${compChoice} caricature`}
+        src={require(`../../images/${emojiType}.png`)}
+        alt={`${emojiType} caricature`}
         />
       </div>
     </>

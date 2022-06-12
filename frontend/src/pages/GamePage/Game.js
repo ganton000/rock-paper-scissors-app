@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Emoji from '../../components/Emoji/Emoji';
+import GameCard from '../../components/GameCard/GameCard';
 
 const Game = () => {
 
@@ -76,9 +77,10 @@ const Game = () => {
 					<h2>Select a move!</h2>
 					<div className="emoji">
 						{emojisArr.map(emoji => (
-							<Emoji
+							<GameCard
 							handleClick={onHandleClick}
 							emojiType={emoji}
+							result={emoji}
 							/>
 						))}
 					</div>
@@ -87,7 +89,11 @@ const Game = () => {
 
 			{startGame && selectedChoice && round !== 0 &&(// Renders for user to choose the next round.
 			<div>
-				<h2>{result}</h2>
+				{/*<h2>{result}</h2>*/}
+				<GameCard
+				emojiType={'rock'}
+				result={result}
+				/>
 				<button onClick={()=>setSelectedChoice(false)}>
 					Next Round
 				</button>
