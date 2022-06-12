@@ -79,7 +79,7 @@ const Game = () => {
 			)}
 			{startGame && !selectedChoice && (// renders main gameplay
 				<div>
-					<h2>Select a move!</h2>
+					<h2 className='move'>Select a move!</h2>
 					<div className="emoji">
 						{emojisArr.map(emoji => (
 							<GameCard
