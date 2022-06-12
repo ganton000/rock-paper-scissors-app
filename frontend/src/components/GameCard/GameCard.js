@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import icons from '../../helpers/icons';
 
 const GameCard = ({ emojiType, result, handleClick }) => {
   return (
@@ -8,12 +10,12 @@ const GameCard = ({ emojiType, result, handleClick }) => {
       className='card'>
         <p className='card--name'>{result}</p>
         <img
-        src={require(`../../images/${emojiType}.png`)}
-        alt={`${emojiType} caricature`}
+        src={icons[emojiType].src}
+        alt={icons[emojiType].alt}
         />
       </div>
     </>
-  )
-}
+  );
+};
 
 export default GameCard;

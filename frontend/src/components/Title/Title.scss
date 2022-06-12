@@ -1,7 +1,4 @@
 .game--title {
-	position: absolute;
-	left: 0;
-	right: 0;
 	margin: auto;
 	width: 100%;
 	text-align: center;
@@ -10,8 +7,6 @@
 	font-family: inherit;
 	font-weight: 800;
 	height: fit-content;
-	bottom: 0;
-	top: -80rem;
 
 	& > span {
 		display: inline-block;

@@ -19,6 +19,7 @@
 	border-radius: 0.5rem;
 	border: 2px solid rgba(191, 191, 191, 0.7);
 	box-shadow: 2px 2px 3px gray;
+	display: block;
 }
 
 .secondaryGuest {
@@ -27,8 +28,17 @@
 	width: 24rem;
 	background-color: #D999B9;
 	border: 2px solid rgba(191, 191, 191, 0.7);
-	display: inline-block;
 	text-align: center;
-	padding-bottom: 0;
 	box-shadow: 2px 2px 3px gray;
+	text-decoration: none;
+	color: inherit;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.rt-links {
+	text-decoration: none;
+	color: inherit;
 }

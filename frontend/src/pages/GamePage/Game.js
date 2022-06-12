@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Emoji from '../../components/Emoji/Emoji';
 import GameCard from '../../components/GameCard/GameCard';
 
 const Game = () => {
+
+	// userName data from guest user 
+	const location = useLocation()
+	const {firstName, lastName} = location.state
 
 	const [userScore, setUserScore] = useState(0)
 	const [compScore, setCompScore] = useState(0)
