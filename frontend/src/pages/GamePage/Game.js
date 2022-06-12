@@ -7,7 +7,7 @@ const Game = () => {
 
 	// userName data from guest user 
 	const location = useLocation()
-	const {first, last} = location.state
+	const {firstName, lastName} = location.state
 
 	const [userScore, setUserScore] = useState(0)
 	const [compScore, setCompScore] = useState(0)

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Link, useNavigate } from 'react-router-dom';
+import icons from '../../helpers/icons';
+const { goBack } = icons;
 
 const GuestForm = () => {
   const [userName, setUserName] = useState({});
   const handleNameChange = ({ target }) => {
     const { value, id } = target;
-    setUserName({...userName, [id]: value.toLowerCase()})
+    setUserName({ ...userName, [id]: value.toLowerCase() });
   };
 
   const [startGame, setStartGame] = useState(false);
   useEffect(() => {
-    const { first, last } = userName;
-    if (!first || !last) return;
-    if (first.length > 3 && last.length > 3) {
+    const { firstName, lastName } = userName;
+    if (!firstName || !lastName) return;
+    if (firstName.length > 3 && lastName.length > 3) {
       setStartGame(true);
     }
   }, [userName]);
@@ -21,8 +23,8 @@ const GuestForm = () => {
   return (
     <div className="guest--container">
       <div className="guest--header">
-        <Link style={{ textDecoration: 'none' }} to="/">
-          <img className="back" src={require('../../images/back-button.png')} />
+        <Link className='rt-links' to="/">
+          <img className="back" src={goBack.src} alt={goBack.alt} />
         </Link>
         <h2 className="top">Get Started Now New Player!</h2>
       </div>
@@ -35,16 +37,16 @@ const GuestForm = () => {
           <label htmlFor="lastName">Last Name</label>
           <input type="text" id="lastName" onChange={handleNameChange} />
         </div>
-        <Link to={startGame ? '/Game' : '#'} state={userName} className="guest">
+        <Link to={startGame ? '/Game' : '#'} state={userName} className="guest rt-links">
           Play Now
         </Link>
       </form>
       <p className="or"> OR </p>
       <div className="signup--container-btn">
-        <Link className="secondaryGuest" to="/signIn">
+        <Link className="secondaryGuest rt-links" to="/signIn">
           Sign In Now
         </Link>
-        <Link className="secondaryGuest second" to="/signUp" id="noIcon">
+        <Link className="secondaryGuest second rt-links" to="/signUp" id="noIcon">
           Sign Up Now
         </Link>
       </div>
