@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Emoji from '../../components/Emoji/Emoji';
 
 const Game = () => {
+
+	// userName data from guest user 
+	const location = useLocation()
+	const {first, last} = location.state
 
 	const [userScore, setUserScore] = useState(0)
 	const [compScore, setCompScore] = useState(0)
