@@ -32,6 +32,7 @@
 .select {
 	border-radius: 2rem;
 	box-shadow: 2px 2px 6px #00000080;
+	transition: transform .25s linear;
 }
 
 .select:hover {
