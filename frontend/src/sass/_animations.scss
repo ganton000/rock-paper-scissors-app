@@ -54,24 +54,24 @@
 
 @keyframes fallLeftAndRise {
     0% {
-      transform: translateY(-200%) skew(50deg);
+      transform: translateY(-200%) skew(70deg);
       opacity: 0;
       text-shadow: 0 0 5rem;
     }
     50% {
-      transform: translateY(100%);
+      transform: translateY(400%);
       opacity: 1;
     }
 }
 
 @keyframes fallRightAndRise{
     0% {
-        transform: translateY(-200%) skew(-50deg);
+        transform: translateY(-400%) skew(-70deg);
         opacity: 0;
         text-shadow: 0 0 5rem;
       }
       50% {
-        transform: translateY(100%);
+        transform: translateY(400%);
         opacity: 1;
       }
-  }
+}

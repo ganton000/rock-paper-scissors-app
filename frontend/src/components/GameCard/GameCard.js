@@ -2,12 +2,17 @@ import React from 'react';
 
 import icons from '../../helpers/icons';
 
-const GameCard = ({ compChoice }) => {
+const GameCard = ({ emojiType, result, handleClick }) => {
   return (
     <>
-      <div className="card">
-        <p className="card--name">{compChoice}</p>
-        <img src={icons[compChoice].src} alt={icons[compChoice].alt} />
+      <div
+      onClick={() => handleClick(emojiType)}
+      className='card'>
+        <p className='card--name'>{result}</p>
+        <img
+        src={icons[emojiType].src}
+        alt={icons[emojiType].alt}
+        />
       </div>
     </>
   );

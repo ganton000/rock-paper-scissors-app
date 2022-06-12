@@ -3,7 +3,7 @@
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 8vw;
+	font-size: 7vw;
 	font-family: inherit;
 	font-weight: 800;
 	height: fit-content;
@@ -19,7 +19,8 @@
 		}
 
 		&:nth-child(1) {
-			animation-name: fallLeftAndRise;
+			transform: scale(1.1);
+			animation-name: fallRightAndRise;
 		}
 
 		&:nth-child(2) {
