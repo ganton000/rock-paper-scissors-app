@@ -14,26 +14,26 @@ const Game = () => {
   const [round, setRound] = useState(5);
   const [startGame, setStartGame] = useState(false);
   const [result, setResult] = useState(false);
-  const [selectedChoice, setSelectedChoice] = useState(null);
+  const [userChoice, setUserChoice] = useState(null);
 
   const emojisArr = ["rock", "paper", "scissors"];
 
   const onHandleClick = (move) => {
-    setSelectedChoice(move);
+    setUserChoice(move);
   };
 
-  const playGame = (selectedChoice) => {
+  const playGame = (userChoice) => {
     const compChoice = emojisArr[Math.floor(Math.random() * 3)];
 
-    console.log(compChoice, selectedChoice);
+    console.log(compChoice, userChoice);
     console.log(userScore, compScore);
 
-    if (selectedChoice === compChoice) {
+    if (userChoice === compChoice) {
       return "Draw!";
     } else if (
-      (selectedChoice === "rock" && compChoice === "paper") ||
-      (selectedChoice === "paper" && compChoice === "scissors") ||
-      (selectedChoice === "scissors" && compChoice === "rock")
+      (userChoice === "rock" && compChoice === "paper") ||
+      (userChoice === "paper" && compChoice === "scissors") ||
+      (userChoice === "scissors" && compChoice === "rock")
     ) {
       setCompScore((prevScore) => prevScore + 1);
       return "You Lose!";
@@ -52,14 +52,14 @@ const Game = () => {
   };
 
   useEffect(() => {
-    if (!selectedChoice) return;
+    if (!userChoice) return;
 
-    const result = playGame(selectedChoice);
+    const result = playGame(userChoice);
     setResult(result);
     if (result !== "Draw!") {
       setRound((prevState) => prevState - 1);
     }
-  }, [selectedChoice]);
+  }, [userChoice]);
 
   // Sets round count to 0 when either user has 3 wins.
   if ((userScore === 3 || compScore === 3) && round !== 0) {
@@ -74,7 +74,7 @@ const Game = () => {
         </button>
       )}
       {startGame &&
-        !selectedChoice && ( // renders main gameplay
+        !userChoice && ( // renders main gameplay
           <div>
             <h2 className="move">Select a move!</h2>
             <div className="emoji">
@@ -89,18 +89,17 @@ const Game = () => {
             </div>
           </div>
         )}
-
       {startGame &&
-        selectedChoice &&
+        userChoice &&
         round !== 0 && ( // Renders for user to choose the next round.
           <div>
             {/*<h2>{result}</h2>*/}
             <GameCard emojiType={"rock"} result={result} />
-            <button onClick={() => setSelectedChoice(false)}>Next Round</button>
+            <button onClick={() => setUserChoice(false)}>Next Round</button>
           </div>
         )}
       {startGame &&
-        selectedChoice &&
+        userChoice &&
         round === 0 && ( // renders the game result
           <div>
             <h2>
