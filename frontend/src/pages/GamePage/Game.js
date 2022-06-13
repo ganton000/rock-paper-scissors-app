@@ -78,11 +78,12 @@ const Game = () => {
           <div>
             <h2 className="move">Select a move!</h2>
             <div className="emoji">
-              {emojisArr.map((emoji) => (
+              {emojisArr.map((emoji, idx) => (
                 <GameCard
                   handleClick={onHandleClick}
                   emojiType={emoji}
                   result={emoji}
+                  key={idx}
                 />
               ))}
             </div>
