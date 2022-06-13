@@ -15,6 +15,7 @@ const Game = () => {
   const [startGame, setStartGame] = useState(false);
   const [result, setResult] = useState(false);
   const [userChoice, setUserChoice] = useState(null);
+  const [compChoice, setCompChoice] = useState(null);
 
   const emojisArr = ["rock", "paper", "scissors"];
 
@@ -23,9 +24,9 @@ const Game = () => {
   };
 
   const playGame = () => {
-    const compChoice = emojisArr[Math.floor(Math.random() * 3)];
+    setCompChoice(emojisArr[Math.floor(Math.random() * 3)]);
 
-    console.log(compChoice, userChoice);
+    console.log(userChoice, compChoice);
     console.log(userScore, compScore);
 
     if (userChoice === compChoice) {
