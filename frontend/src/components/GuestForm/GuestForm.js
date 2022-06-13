@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import icons from '../../helpers/icons';
+import icons from '../../utils/icons';
 const { goBack } = icons;
 
 const GuestForm = () => {
