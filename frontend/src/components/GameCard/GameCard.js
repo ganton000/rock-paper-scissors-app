@@ -1,6 +1,6 @@
 import React from 'react';
 
-import icons from '../../helpers/icons';
+import icons from '../../util/icons';
 
 const GameCard = ({ emojiType, result, handleClick }) => {
   return (
