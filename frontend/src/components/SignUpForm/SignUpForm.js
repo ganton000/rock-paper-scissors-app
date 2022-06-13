@@ -8,7 +8,7 @@ const SignUpForm = () => {
     <div className='signup--container'>
       <div className='signup--header'>
       <Link style={{textDecoration: 'none'}} to='/'>
-        <img className='back' src={require('../../images/back-button.png')} />
+        <img className='back' alt="Back button" src={require('../../images/whitebackarrow.png')} />
       </Link>
         <h2 className='top'>Join Now and Start Playing Today!</h2>
       </div>
@@ -36,13 +36,12 @@ const SignUpForm = () => {
       <p className='or'> OR </p>
       <div className='signup--container-btn'>
         <button className='secondaryUp'>
-          Sign up with Google <img className='icon' src={require('../../images/google.png')} />
+          Sign up with Google <img className='icon' alt='back button'src={require('../../images/google.png')} />
         </button>
         <button className='secondaryUp second'>
           Sign up with Facebook
         </button>
       </div>
-
     </div>
   );
 };
