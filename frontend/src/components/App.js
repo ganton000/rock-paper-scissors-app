@@ -9,12 +9,21 @@ import SignInForm from "./SignInForm/SignInForm";
 import GuestForm from "./GuestForm/GuestForm";
 import Title from './Title/Title';
 import GameCard from "./GameCard/GameCard";
-// import Navbar from "./Navbar/Navbar";
-
+import Navbar from "./Navbar/Navbar";
+//import { BrowserRouter as Router, } from "react-router-dom";
 const App = () => {
 
 	return (
 		<>
+	<Navbar />
+	<Routes>
+      <Route>
+        <Route path='/' exact component={Home} />
+        <Route path='/game' component={Game} />
+        <Route path='/test'  />
+        <Route path='/goats' />
+      </Route>
+    </Routes>
 			<Title />
 			<div className='app--container'>
 				<Routes>
