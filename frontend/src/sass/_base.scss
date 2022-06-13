@@ -2,9 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 0px solid red;
  }
- 
+
  html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -18,7 +17,7 @@
     background-size: cover;
     background-image: url("../images/layered4.svg");
  }
- 
+
  body {
     padding: 1rem;
     font-family: 'Indie Flower', cursive, 'Roboto', sans-serif;
@@ -26,15 +25,16 @@
     height: 100vh;
     overflow: hidden;
  }
- 
+
  a {
      text-decoration: none;
+     color: inherit;
  }
- 
+
  ul {
     list-style: none;
  }
- 
+
  h2 {
     font-family: 'Roboto', sans-serif;
     font-size: $font-size-md;

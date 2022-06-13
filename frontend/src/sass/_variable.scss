@@ -1,6 +1,21 @@
+//COLORS
+$color-pink-light: #D999B9;
+$color-pink-dark: #86325C;
+
+$color-blue-light: #1E91D6;
+$color-blue-dark: #12547D;
+
+$color-brown-light: #885053;
+$color-brown-dark: #5A3537;
+
+
+//FONTS
+$font-size-xsm: 1.6rem;
 $font-size-sm: 3rem;
 $font-size-md: 4rem;
-//$font-size-lg: ;
+$font-size-lg: 7vw;
 //$font-size-xlg: ;
+
+//DIMENSIONS
 $card-height: 25vh;
 $card-width: calc($card-height/1.2);

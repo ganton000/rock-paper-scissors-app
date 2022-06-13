@@ -8,7 +8,7 @@
 	padding: 2rem 4rem;
 	margin-bottom: 4rem;
 	border: white;
-	
+
 }
 .signup--header {
 	font-weight: 500;
@@ -46,7 +46,7 @@
 }
 
 .signUp {
-	background-color: #1E91D6;
+	background-color: $color-blue-light;
 	height: 5rem;
 	width: 50rem;
 	position: relative;
@@ -98,7 +98,7 @@ form {
 	border-radius: 0.5rem;
 	height: 5rem;
 	width: 24rem;
-	background-color: #1E91D6;
+	background-color: $color-blue-light;
 	border: 2px solid rgba(191, 191, 191, 0.7);
 	display: inline-block;
 	text-align: center;
