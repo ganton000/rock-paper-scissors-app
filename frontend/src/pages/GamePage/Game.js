@@ -22,7 +22,7 @@ const Game = () => {
     setUserChoice(move);
   };
 
-  const playGame = (userChoice) => {
+  const playGame = () => {
     const compChoice = emojisArr[Math.floor(Math.random() * 3)];
 
     console.log(compChoice, userChoice);
@@ -54,7 +54,7 @@ const Game = () => {
   useEffect(() => {
     if (!userChoice) return;
 
-    const result = playGame(userChoice);
+    const result = playGame();
     setResult(result);
     if (result !== "Draw!") {
       setRound((prevState) => prevState - 1);
