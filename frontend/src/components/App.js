@@ -9,8 +9,9 @@ import SignInForm from "./SignInForm/SignInForm";
 import GuestForm from "./GuestForm/GuestForm";
 import Title from './Title/Title';
 import GameCard from "./GameCard/GameCard";
+import Spinner from './Spinner/Spinner';
 import Navbar from "./Navbar/Navbar";
-//import { BrowserRouter as Router, } from "react-router-dom";
+
 const App = () => {
 
 	return (
@@ -31,9 +32,9 @@ const App = () => {
 					<Route path="game" element={<Game />}/>
 					<Route path='signIn' element={<SignInForm />}/>
 					<Route path='signUp' element={<SignUpForm />}/>
-					<Route path='test' element={<GameCard />} />
+					<Route path='test' element={<Spinner />} />
 					<Route path='guest' element={<GuestForm />} />
-					
+
 				</Routes>
 			</div>
 		</>
