@@ -1,0 +1,15 @@
+.input {
+  background: whitesmoke;
+  border: none;
+  height: 3.75rem;
+
+  &.sm {
+    width: 32.5%;
+  }
+  &.md {
+    width: 47.5%;
+  }
+  &.lg {
+    width: 100%;
+  }
+}
