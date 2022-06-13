@@ -7,7 +7,7 @@ const SignInForm = () => {
     <div className='signup--container'>
       <div className='signup--header'>
         <Link style={{textDecoration: 'none'}} to='/'>
-          <img className='back' src={require('../../images/back-button.png')} />
+          <img className='back' alt='Back button'src={require('../../images/whitebackarrow.png')} />
         </Link>
         <h2 className='top'>Login Now and Start Playing!</h2>
       </div>
@@ -27,7 +27,7 @@ const SignInForm = () => {
       <p className='or'> OR </p>
       <div className='signup--container-btn'>
         <button className='secondaryIn'>
-          Sign In with Google <img className='icon' src={require('../../images/google.png')} />
+          Sign In with Google <img className='icon' alt='Google'src={require('../../images/google.png')} />
         </button>
         <button className='secondaryIn second'>
           Sign In with Facebook
