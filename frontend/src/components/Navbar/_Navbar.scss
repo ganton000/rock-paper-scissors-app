@@ -1,0 +1,16 @@
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    font-size: $font-size-xsm;
+    position: absolute;
+    right: 1%;
+
+    & > li:hover{
+        display: inline-block;
+        background-color: $color-pink-light;
+        padding: .3rem .4rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}

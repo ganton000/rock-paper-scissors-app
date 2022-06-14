@@ -9,12 +9,22 @@ import SignInForm from "./SignInForm/SignInForm";
 import GuestForm from "./GuestForm/GuestForm";
 import Title from './Title/Title';
 import GameCard from "./GameCard/GameCard";
-
+import Spinner from './Spinner/Spinner';
+import Navbar from "./Navbar/Navbar";
 
 const App = () => {
 
 	return (
 		<>
+	<Navbar />
+	<Routes>
+      <Route>
+        <Route path='/' exact component={Home} />
+        <Route path='/game' component={Game} />
+        <Route path='/test'  />
+        <Route path='/goats' />
+      </Route>
+    </Routes>
 			<Title />
 			<div className='app--container'>
 				<Routes>
@@ -22,8 +32,9 @@ const App = () => {
 					<Route path="game" element={<Game />}/>
 					<Route path='signIn' element={<SignInForm />}/>
 					<Route path='signUp' element={<SignUpForm />}/>
-					<Route path='test' element={<GameCard />} />
-					<Route path='guest' element={<GuestForm />}/>
+					<Route path='test' element={<Spinner />} />
+					<Route path='guest' element={<GuestForm />} />
+
 				</Routes>
 			</div>
 		</>

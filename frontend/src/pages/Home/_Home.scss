@@ -1,15 +1,13 @@
 .home {
-	width: 90vw;
-	height: 90vh;
-	max-width: 50rem;
-
+	width: 100%;
+	min-width: 50rem;
 }
 .btn__container {
 	display: flex;
-	gap: 5rem;
-	padding: 2rem;
-	justify-content: center;
-	width: 80rem;
+	//padding: 2rem 4rem;
+	gap: 6rem;
+	justify-content: space-around;
+	width: 100%;
 	position: relative;
 	top: 6rem;
 }
@@ -17,23 +15,25 @@
 .select:hover::after {
 	border-radius: 2rem;
 	display: block;
-	position: relative;
-	z-index: 1;
+	position: absolute;
 	content: '';
-	height: 0;
 	width: 100%;
-	top: -19rem;
-	left: 0;
 	background: black;
 	opacity: 0.4;
 	animation: fill 0.3s ease-in-out forwards;
 }
 
 .select {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	border-radius: 2rem;
 	box-shadow: 2px 2px 6px #00000080;
 	transition: transform .25s linear;
 	text-decoration: none;
+	width: $card-width;
+	height: $card-height;
 }
 
 .select:hover {
@@ -56,16 +56,10 @@
 }
 
 img {
-	width: 150px;
-	height: 150px;
+	width: 20rem;
+	height: 20rem;
 }
 
-h4 {
-	font-family: 'Roboto', sans-serif;
+.label {
 	color: whitesmoke;
-	margin: 0 auto;
-	text-align: center;
-	font-size: 3rem;
-	position: relative;
-	top: -1rem;
 }
