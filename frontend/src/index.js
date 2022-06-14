@@ -8,6 +8,8 @@ import {
 	QueryClient,
 	QueryClientProvider,
   } from 'react-query'
+	
+import { ReactQueryDevtools } from 'react-query/devtools';
 
  // Create a client
 const queryClient = new QueryClient()
