@@ -21,11 +21,10 @@ const Game = () => {
 
   const onHandleClick = (move) => {
     setUserChoice(move);
+    setCompChoice(emojisArr[Math.floor(Math.random() * 3)]);
   };
 
   const playGame = () => {
-    setCompChoice(emojisArr[Math.floor(Math.random() * 3)]);
-
     console.log(userChoice, compChoice);
     console.log(userScore, compScore);
 
@@ -95,7 +94,7 @@ const Game = () => {
         round !== 0 && ( // Renders for user to choose the next round.
           <div>
             {/*<h2>{result}</h2>*/}
-            <GameCard emojiType={"rock"} result={result} />
+            <GameCard emojiType={compChoice} result={result} />
             <button onClick={() => setUserChoice(false)}>Next Round</button>
           </div>
         )}
