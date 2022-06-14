@@ -15,21 +15,21 @@ const SignUpForm = () => {
       <form>
         <div className='name'>
           <label htmlFor="firstName">First Name</label>
-          <input id='firstName' type='text' />
+          <input id='firstName' type='text' required/>
         </div>
         <div className='name last'>
           <label htmlFor="lastName">Last Name</label>
-          <input id='lastName' type='text' />
+          <input id='lastName' type='text' required/>
         </div>
         <label htmlFor="email">Email</label>
-        <input id='email' type='email' />
+        <input id='email' type='email' required/>
         <div className='name'>
           <label htmlFor="username">Username</label>
-          <input id='username' type='text' />
+          <input id='username' type='text' required/>
         </div>
         <div className='name last'>
           <label htmlFor="password">Password</label>
-          <input id='password' type='password' />
+          <input id='password' type='password' required/>
         </div>
         <button type='submit' className='signUp'>Sign Up</button>
       </form>
@@ -39,7 +39,7 @@ const SignUpForm = () => {
           Sign up with Google <img className='icon' alt='back button'src={require('../../images/google.png')} />
         </button>
         <button className='secondaryUp second'>
-          Sign up with Facebook
+          Sign up with Facebook <img className='icon' alt='Facebook'src={require('../../images/facebook-logo.png')} />
         </button>
       </div>
     </div>
