@@ -13,14 +13,14 @@ const SignInForm = () => {
       </div>
       <form>
         <label htmlFor="email">Email</label>
-        <input id='email' type='email' />
+        <input id='email' type='email' required/>
         <div className='name'>
           <label htmlFor="username">Username</label>
-          <input id='username' type='text' />
+          <input id='username' type='text' required/>
         </div>
         <div className='name last'>
           <label htmlFor="password">Password</label>
-          <input id='password' type='password' />
+          <input id='password' type='password' required/>
         </div>
         <button type='submit' className='signIn'>Sign In</button>
       </form>
@@ -30,7 +30,7 @@ const SignInForm = () => {
           Sign In with Google <img className='icon' alt='Google'src={require('../../images/google.png')} />
         </button>
         <button className='secondaryIn second'>
-          Sign In with Facebook
+          Sign In with Facebook <img className='icon' alt='Facebook'src={require('../../images/facebook-logo.png')} />
         </button>
       </div>
     </div>

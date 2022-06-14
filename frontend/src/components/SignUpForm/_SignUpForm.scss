@@ -42,13 +42,13 @@
 	top: 0.7rem;
 	right: -0.5rem;
 	background-color: whitesmoke;
-	border-radius: 0.5rem;
+	border-radius: 0.6rem;
 }
 
 .signUp {
 	background-color: $color-blue-light;
 	height: 5rem;
-	width: 50rem;
+	width: 55rem;
 	position: relative;
 	margin: 0 auto;
 	border-radius: 0.5rem;
@@ -59,7 +59,7 @@
 label {
 	font-size: 2rem;
 	font-weight: bold;
-	width: 50rem;
+	width: 55rem;
 	text-align: left;
 	font-family: 'Roboto', sans-serif;
 	color: white;
@@ -68,7 +68,7 @@ label {
 
 input {
 	height: 3.5rem;
-	width: 50rem;
+	width: 55rem;
 	border-radius: 0.5rem;
 	background-color: whitesmoke;
 	border: 2px solid rgba(191, 191, 191, 0.7);
@@ -77,11 +77,11 @@ input {
 }
 
 .name input, .name label {
-	width: 24rem;
+	width: 26.5rem;
 }
 
 .name {
-	width: 24rem;
+	width: 26.5rem;
 	display: inline-block;
 }
 
@@ -91,13 +91,13 @@ input {
 }
 
 form {
-	width: 50rem;
+	width: 55rem;
 }
 
 .secondaryUp {
 	border-radius: 0.5rem;
 	height: 5rem;
-	width: 24rem;
+	width: 26.5rem;
 	background-color: $color-blue-light;
 	border: 2px solid rgba(191, 191, 191, 0.7);
 	display: inline-block;
@@ -110,7 +110,6 @@ form {
 	bottom: 0rem;
 	position: relative;
 	margin-left: 2rem;
-	padding-top: 1rem;
 }
 
 .or {
