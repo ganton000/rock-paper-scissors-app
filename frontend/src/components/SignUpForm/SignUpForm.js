@@ -1,3 +1,6 @@
+// Regex Description
+// https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a"
+
 import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -28,8 +31,8 @@ const SignUpForm = () => {
           <input id='username' type='text' required/>
         </div>
         <div className='name last'>
-          <label htmlFor="password">Password</label>
-          <input id='password' type='password' required/>
+          <label htmlFor="password" >Password</label>
+          <input id='password' type='password' pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required />
         </div>
         <button type='submit' className='signUp'>Sign Up</button>
       </form>
