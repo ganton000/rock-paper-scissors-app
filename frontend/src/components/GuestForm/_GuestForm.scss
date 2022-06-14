@@ -8,6 +8,8 @@
 .guest--header {
 	font-weight: 500;
 	width: 100%;
+	align-self: center;
+	text-align: center;
 }
 
 .guest {
@@ -18,8 +20,13 @@
 	margin: 0 auto;
 	border-radius: 0.5rem;
 	border: 2px solid rgba(191, 191, 191, 0.7);
-	box-shadow: 2px 2px 3px gray;
+	//box-shadow: 2px 2px 3px gray;
 	display: block;
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
+	text-align: center;
+	padding-top: 1rem;
+	font-weight: bold;
 }
 
 .secondaryGuest {
@@ -28,17 +35,26 @@
 	width: 24rem;
 	background-color: #D999B9;
 	border: 2px solid rgba(191, 191, 191, 0.7);
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
 	text-align: center;
-	box-shadow: 2px 2px 3px gray;
+	//box-shadow: 2px 2px 3px gray;
 	text-decoration: none;
 	color: inherit;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	top: 0.5rem;
+	font-weight: bold;
 }
 
 
 .rt-links {
 	text-decoration: none;
 	color: inherit;
+}
+
+#noIcon {
+	padding-top: 0;
 }

@@ -24,7 +24,7 @@ const GuestForm = () => {
     <div className="guest--container">
       <div className="guest--header">
         <Link className='rt-links' to="/">
-          <img className="back" src={goBack.src} alt={goBack.alt} />
+          <img className="back" src={require('../../images/whitebackarrow.png')} alt={goBack.alt} />
         </Link>
         <h2 className="top">Get Started Now New Player!</h2>
       </div>
