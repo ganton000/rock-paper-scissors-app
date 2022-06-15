@@ -1,5 +1,6 @@
-import goBack from '../images/back-button.png'
+import goBack from '../images/whitebackarrow.png';
 import google from '../images/google.png'
+import facebook from '../images/facebook-logo.png';
 
 import paper from '../images/paper.png'
 import rock from '../images/rock.png'
@@ -12,7 +13,7 @@ const icons = {
   },
   google: {
     src: google,
-    alt: 'google icon',
+    alt: 'google logo icon',
   },
   paper: {
     src: paper,
@@ -26,6 +27,10 @@ const icons = {
     src: scissors,
     alt: 'scissors caricature',
   },
+  facebook: {
+    src: facebook,
+    alt: 'facebook logo icon'
+  }
 };
 
 export default icons

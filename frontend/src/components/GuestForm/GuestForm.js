@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import Input from '../Input/Input';
+import ImgIcon from '../ImgIcon/ImgIcon';
 import icons from '../../utils/icons';
 const { goBack } = icons;
 
@@ -23,21 +25,33 @@ const GuestForm = () => {
   return (
     <div className="guest--container">
       <div className="guest--header">
-        <Link className='rt-links' to="/">
-          <img className="back" src={require('../../images/whitebackarrow.png')} alt={goBack.alt} />
+        <Link className="rt-links" to="/">
+          <ImgIcon type="goBack" size="md" />
         </Link>
         <h2 className="top">Get Started Now New Player!</h2>
       </div>
       <form>
         <div className="name">
-          <label htmlFor="firstName">First Name</label>
-          <input type="text" id="firstName" onChange={handleNameChange} required/>
+          <Input
+            type="text"
+            htmlFor="firstName"
+            onChange={handleNameChange}
+            required
+          />
         </div>
         <div className="name last">
-          <label htmlFor="lastName">Last Name</label>
-          <input type="text" id="lastName" onChange={handleNameChange} required/>
+          <Input
+            type="text"
+            htmlFor="lastName"
+            onChange={handleNameChange}
+            required
+          />
         </div>
-        <Link to={startGame ? '/Game' : '#'} state={userName} className="guest rt-links">
+        <Link
+          to={startGame ? '/Game' : '#'}
+          state={userName}
+          className="guest rt-links"
+        >
           Play Now
         </Link>
       </form>
@@ -46,7 +60,11 @@ const GuestForm = () => {
         <Link className="secondaryGuest rt-links" to="/signIn">
           Sign In Now
         </Link>
-        <Link className="secondaryGuest second rt-links" to="/signUp" id="noIcon">
+        <Link
+          className="secondaryGuest second rt-links"
+          to="/signUp"
+          id="noIcon"
+        >
           Sign Up Now
         </Link>
       </div>

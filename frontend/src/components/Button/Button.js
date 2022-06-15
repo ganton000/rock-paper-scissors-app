@@ -1,12 +1,20 @@
-import React from "react";
+import React from 'react';
 
-const Button = ({ children }) => {
+/*
+-- the type prop is set for the forms only, for now.
+-- type: 'login' || 'join' || 'guest'
+-- size: 'sm' || 'md' ||  'lg'
+*/
 
-	return (
-		<button className='btn--base'>
-			{children}
-		</button>
-	)
+const Button = ({ children, onClick, className }) => {
+  return (
+    <button
+      className={`btn ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;

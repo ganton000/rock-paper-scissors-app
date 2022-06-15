@@ -6,20 +6,6 @@ import { Link } from 'react-router-dom';
 import { gameApi } from '../../apis/gameApi';
 import { useForm } from 'react-hook-form';
 
-
-//const handleClick = (e) => {
-//  e.preventDefault();
-
-//  const user = { e.target }
-
-//  gameApi.post('/signup', {
-
-//  })
-
-//};
-
-
-
 const SignUpForm = () => {
 
   const [user, setUser] = useState(null);
@@ -34,14 +20,18 @@ const SignUpForm = () => {
   }, [user])
 
   return (
-    <div className='signup--container'>
-      <div className='signup--header'>
-      <Link style={{textDecoration: 'none'}} to='/'>
-        <img className='back' alt="Back button" src={require('../../images/whitebackarrow.png')} />
-      </Link>
-        <h2 className='top'>Join Now and Start Playing Today!</h2>
+    <div className="signup--container">
+      <div className="signup--header">
+        <Link style={{ textDecoration: 'none' }} to="/">
+          <img
+            className="back"
+            alt="Back button"
+            src={require('../../images/whitebackarrow.png')}
+          />
+        </Link>
+        <h2 className="top">Join Now and Start Playing Today!</h2>
       </div>
-
+                 
       <form
       onSubmit={handleSubmit((data) => {
         try { setUser(data) } catch (e) { throw new Error('Something went wrong') }
