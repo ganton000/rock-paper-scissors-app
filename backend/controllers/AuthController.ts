@@ -7,19 +7,30 @@ import { createAccessToken, createRefreshToken } from '../utils/authUtils';
 
 const signInUser = async (req: Request, res: Response) => {
     try {
-        const { email, password } = req.body;
-        const user = await prisma.user.findFirst({
-            where: {
-                email: email.toLowerCase(),
-            }
-        })
-        console.log(user);
+        const { email, password, username } = req.body;
+
+        let user;
+
+        if (username) {
+            user = await prisma.user.findFirst({
+                where: {
+                    username: username.toLowerCase(),
+                }
+            })
+        } else if (email) {
+            user = await prisma.user.findFirst({
+                where: {
+                    email: email.toLowerCase(),
+                }
+            })
+        }
+
         if (!user) {
             res.status(401).json({
                 success: false,
-                message: "Wrong Email Address"
+                message: "Invalid Credentials"
             })
-            return
+            return;
         }
         const valid = compareSync(password, user!.password);
         if (valid) {
@@ -34,7 +45,7 @@ const signInUser = async (req: Request, res: Response) => {
         console.log(error);
         res.status(500).json({
             success: false,
-            message: "Unknown Error! try again"
+            message: "There was an issue connecting with the Server. Please try again!"
         })
 
     }
@@ -52,29 +63,41 @@ const signUpUser = async (req: Request, res: Response) => {
             lastName
         };
 
-        const oldUser = await prisma.user.findFirst({
+        const isEmailExists = await prisma.user.findFirst({
             where: {
                 email
             }
         })
-        if (oldUser) {
+        if (isEmailExists) {
             res.send(400).json({
                 success: false,
-                message: "User already exists"
+                message: "There is already an account registered with this email!"
+            })
+        }
+
+        const isUsernameExists = await prisma.user.findFirst({
+            where: {
+                username
+            }
+        })
+        if (isUsernameExists) {
+            res.send(400).json({
+                success: false,
+                message: "This username already exists!"
             })
         }
 
         await prisma.user.create({ data })
         res.status(201).json({
             success: true,
-            message: "User created successfully",
+            message: "Welcome! Your account has been created.",
         })
     }
     catch (error) {
         console.log(error)
         res.status(400).json({
             success: false,
-            message: "User creation failed"
+            message: "We were not able to process your request, sorry!"
         })
     }
 
@@ -86,7 +109,6 @@ const signOutUser = async (req: Request, res: Response) => {
     res.status(200).json({
         success: true,
         message: "User signed out successfully",
-
     })
 
 }

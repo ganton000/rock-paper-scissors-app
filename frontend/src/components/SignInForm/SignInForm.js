@@ -1,26 +1,56 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
+import gameApi from '../../api/gameApi';
 import Button from '../Button/Button';
 import ImgIcon from '../ImgIcon/ImgIcon';
 import Input from '../Input/Input';
 
 
 const SignInForm = () => {
-  const [userData, setUserData] = useState({});
-  const handleInputChange = ({ target }) => {
-    const { id, value } = target;
-    setUserData({ ...userData, [id]: value });
-  };
 
-  const { email, username, password } = userData;
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    defaultValues: {
+      username: '',
+      password: ''
+    }
+  });
 
-  const handleSubmitForm = () => {
-    // send form to backend
-    // for now outputting to console
-    console.log(userData);
-  };
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+
+    if (!user) return;
+
+    console.log(user)
+
+    const signInUser = async (user) => {
+
+      try {
+        const userData = JSON.stringify(user);
+        const response = await gameApi.post('/signin', userData);
+        console.log(response)
+        console.log(response.data)
+        if (response.status === 200) {
+          console.log(response)
+          console.log(response.data)
+          reset();
+          setUser(null);
+        }
+
+      } catch (error) {
+        console.log(error)
+        setUser(null);
+        reset({}, { keepValues: true });
+      }
+    }
+
+    signInUser(user);
+
+  }, [user, reset])
+
+  console.log("render")
 
   return (
     <div className="signup--container">
@@ -28,35 +58,35 @@ const SignInForm = () => {
         <Link to="/">
           <ImgIcon className="back" type="goBack" />
         </Link>
-        <h2 className="top">Login Now and Start Playing!</h2>
+        <h2 className="signin--title">Login Now and Start Playing!</h2>
       </div>
-      <form>
-        <Input
-          onChange={handleInputChange}
-          value={email}
-          htmlFor="email"
-          type="email"
-          required
-        />
-        <div className="name">
-          <Input
-            onChange={handleInputChange}
-            value={username}
-            htmlFor="username"
+      <form
+        onSubmit={handleSubmit((data) => {
+          try { setUser(data) } catch (e) {
+            setUser(null);
+            throw new Error('Something went wrong')
+          }
+        })}>
+          <input
+            {...register("username",
+              { required: "This is required." }
+            )}
             type="text"
-            required
+            placeholder="Username"
           />
-        </div>
-        <div className="name last">
-          <Input
-            onChange={handleInputChange}
-            value={password}
-            htmlFor="password"
+          <p>{errors.username?.message}</p>
+        {/*</div>*/}
+        {/*<div className="name last">*/}
+          <input
+            {...register("password",
+            { required: "This is required." }
+            )}
             type="password"
-            required
+            placeholder="Password"
           />
-        </div>
-        <Button onClick={handleSubmitForm} className="signIn">
+          <p>{errors.password?.message}</p>
+        {/*</div>*/}
+        <Button type="submit" className="signIn">
           Sign In
         </Button>
       </form>

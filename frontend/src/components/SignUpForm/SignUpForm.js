@@ -13,30 +13,40 @@ const SignUpForm = () => {
 
   const [user, setUser] = useState(null);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    defaultValues: {
+      username: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      email: ''
+    }
+  });
 
   useEffect(() => {
 
     if (!user) return;
-
     const createUser = async (user) => {
-
       try {
-        const response = await gameApi.post('/signup', { ...user });
 
-        console.log(response);
+        const userData = JSON.stringify(user);
+        const response = await gameApi.post('/signup', userData);
 
+        if (response.status === 201) {
+          console.log(response)
+        }
+
+          setUser(null);
+          reset();
+
+      } catch (error) {
+        console.log(error)
         setUser(null);
-
-      } catch (err) {
-        console.log(err)
-        setUser(null);
+        reset({}, { keepValues: true, keepErrors: true });
       }
     }
-
     createUser(user);
-
-  }, [user])
+  }, [user, reset])
 
   return (
     <div className='signup--container'>
