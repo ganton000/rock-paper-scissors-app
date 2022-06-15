@@ -1,14 +1,13 @@
 import React from 'react';
 
-import icons from '../../util/icons';
-import './ImgIcon.scss'
+import icons from '../../utils/icons';
 
-const ImgIcon = ({ type, size, bg }) => {
+const ImgIcon = ({ type, className }) => {
   return (
     <img
       src={icons[type].src}
       alt={icons[type].alt}
-      className={`img ${size} bg-${bg}`}
+      className={`img ${className}`}
     />
   );
 };
