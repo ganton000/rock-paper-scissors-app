@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 import Home from '../pages/Home/Home';
@@ -11,9 +11,10 @@ import Title from './Title/Title';
 import GameCard from "./GameCard/GameCard";
 import Spinner from './Spinner/Spinner';
 import Navbar from "./Navbar/Navbar";
+import BackgroundToggle from "./BackgroundToggle/BackgroundToggle";
 
 const App = () => {
-
+	
 	return (
 		<>
 			<Navbar />
@@ -28,6 +29,7 @@ const App = () => {
 					<Route path='guest' element={<GuestForm />} />
 				</Routes>
 			</div>
+			<BackgroundToggle />
 		</>
 	)
 };
