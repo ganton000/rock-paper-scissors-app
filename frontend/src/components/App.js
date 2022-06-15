@@ -26,7 +26,6 @@ const App = () => {
 					<Route path='signup' element={<SignUpForm />}/>
 					<Route path='test' element={<Spinner />} />
 					<Route path='guest' element={<GuestForm />} />
-
 				</Routes>
 			</div>
 		</>
