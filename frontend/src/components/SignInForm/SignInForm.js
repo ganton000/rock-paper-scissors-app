@@ -10,9 +10,46 @@ import Input from '../Input/Input';
 
 const SignInForm = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const [user, setUser] = useState({});
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    defaultValues: {
+      username: '',
+      password: ''
+    }
+  });
 
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+
+    if (!user) return;
+
+    const signInUser = async (user) => {
+
+      try {
+        const userData = JSON.stringify(user);
+        const response = await gameApi.post('/signin', userData);
+        console.log(response)
+        console.log(response.data)
+        if (response.status === 200) {
+          console.log(response)
+          console.log(response.data)
+          reset();
+          setUser(null);
+        }
+
+      } catch (error) {
+        console.log(error)
+        setUser(null);
+        reset({}, { keepValues: true });
+      }
+    }
+
+    signInUser(user);
+
+  }, [user, reset])
+
+  console.log("render")
 
   return (
     <div className="signup--container">
@@ -20,7 +57,7 @@ const SignInForm = () => {
         <Link to="/">
           <ImgIcon className="back" type="goBack" />
         </Link>
-        <h2 className="top">Login Now and Start Playing!</h2>
+        <h2 className="signin--title">Login Now and Start Playing!</h2>
       </div>
       <form
         onSubmit={handleSubmit((data) => {
@@ -29,34 +66,22 @@ const SignInForm = () => {
             throw new Error('Something went wrong')
           }
         })}>
-        {/*<Input
-          onChange={handleInputChange}
-          value={email}
-          htmlFor="email"
-          type="email"
-          required
-        />*/}
-        {/*<div className="name">*/}
-          <Input
+          <input
             {...register("username",
               { required: "This is required." }
             )}
-            htmlFor="username"
             type="text"
             placeholder="Username"
-            required
           />
           <p>{errors.username?.message}</p>
         {/*</div>*/}
         {/*<div className="name last">*/}
-          <Input
+          <input
             {...register("password",
             { required: "This is required." }
             )}
-            htmlFor="password"
             type="password"
             placeholder="Password"
-            required
           />
           <p>{errors.password?.message}</p>
         {/*</div>*/}

@@ -13,7 +13,15 @@ const SignUpForm = () => {
 
   const [user, setUser] = useState(null);
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    defaultValues: {
+      username: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      email: ''
+    }
+  });
 
   useEffect(() => {
 
@@ -25,18 +33,20 @@ const SignUpForm = () => {
         const response = await gameApi.post('/signup', userData);
 
         if (response.status === 201) {
-          console.log(`201: ${response.data}`)
+          console.log(response)
         }
-        console.log(response.data);
-          setUser(null);
 
-      } catch (err) {
-        console.log(err)
+          setUser(null);
+          reset();
+
+      } catch (error) {
+        console.log(error)
         setUser(null);
+        reset({}, { keepValues: true, keepErrors: true });
       }
     }
     createUser(user);
-  }, [user])
+  }, [user, reset])
 
   return (
     <div className='signup--container'>
