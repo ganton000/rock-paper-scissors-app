@@ -1,12 +1,38 @@
 // Regex Description
 // https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a"
 
-import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+import { gameApi } from '../../apis/gameApi';
+import { useForm } from 'react-hook-form';
 
-import Button from '../../components/Button/Button';
+
+//const handleClick = (e) => {
+//  e.preventDefault();
+
+//  const user = { e.target }
+
+//  gameApi.post('/signup', {
+
+//  })
+
+//};
+
+
 
 const SignUpForm = () => {
+
+  const [user, setUser] = useState(null);
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  useEffect(() => {
+
+    if (!user) return;
+
+    console.log(user);
+  }, [user])
+
   return (
     <div className='signup--container'>
       <div className='signup--header'>
@@ -15,34 +41,82 @@ const SignUpForm = () => {
       </Link>
         <h2 className='top'>Join Now and Start Playing Today!</h2>
       </div>
-      <form>
+
+      <form
+      onSubmit={handleSubmit((data) => {
+        try { setUser(data) } catch (e) { throw new Error('Something went wrong') }
+      })}>
         <div className='name'>
           <label htmlFor="firstName">First Name</label>
-          <input id='firstName' type='text' required/>
+          <input
+          { ...register("firstName",
+            { required: "This is required." }
+          )}
+          id='firstName' type='text' />
+          <p>{errors.firstName?.message}</p>
         </div>
+
         <div className='name last'>
           <label htmlFor="lastName">Last Name</label>
-          <input id='lastName' type='text' required/>
+          <input
+          { ...register("lastName",
+            { required: "This is required." }
+          )}
+          id='lastName' type='text' />
+          <p>{errors.lastName?.message}</p>
         </div>
+
         <label htmlFor="email">Email</label>
-        <input id='email' type='email' required/>
+        <input
+         {...register("email",
+         { required: "This is required." }
+         )}
+        id='email' type='email' />
+        <p>{errors.email?.message}</p>
+
         <div className='name'>
           <label htmlFor="username">Username</label>
-          <input id='username' type='text' required/>
+          <input
+           {...register("username", {
+            required: "This is required.",
+            minLength: {
+              value: 4,
+              message: "Min. length of 4 characters"
+            }
+          })}
+          id='username' type='text' />
+          <p>{errors.username?.message}</p>
         </div>
+
         <div className='name last'>
           <label htmlFor="password" >Password</label>
-          <input id='password' type='password' pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required />
+          <input
+          {...register("password", {
+            required: "This is required.",
+            pattern: {
+              value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+              message: "Min. length of 8 characters, at least one letter and one number"
+            }
+          })}
+          id='password' type='password' />
+          <p>{errors.password?.message}</p>
         </div>
+
         <button type='submit' className='signUp'>Sign Up</button>
       </form>
+
       <p className='or'> OR </p>
+
       <div className='signup--container-btn'>
+
         <button className='secondaryUp'>
-          Sign up with Google <img className='icon' alt='back button'src={require('../../images/google.png')} />
+          Sign up with Google
+          <img className='icon' alt='back button'src={require('../../images/google.png')} />
         </button>
+
         <button className='secondaryUp second'>
-          Sign up with Facebook <img className='icon' alt='Facebook'src={require('../../images/facebook-logo.png')} />
+          Sign up with Facebook
+           <img className='icon' alt='Facebook'src={require('../../images/facebook-logo.png')} />
         </button>
       </div>
     </div>

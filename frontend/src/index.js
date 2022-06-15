@@ -1,16 +1,13 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-import './main.scss';
+import './index.scss';
 import App from './components/App';
 
-import {
-	QueryClient,
-	QueryClientProvider,
-  } from 'react-query'
 
- // Create a client
-const queryClient = new QueryClient()
+//create client
+const client = new QueryClient();
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -18,9 +15,8 @@ const root = createRoot(container);
 
 root.render(
 	<BrowserRouter>
-		<QueryClientProvider client={queryClient}>
+		<QueryClientProvider client={client}>
     		<App />
-			<ReactQueryDevtools />
-    	</QueryClientProvider>
+		</QueryClientProvider>
 	</BrowserRouter>
 );
