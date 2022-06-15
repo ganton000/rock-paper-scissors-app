@@ -16,15 +16,7 @@ const App = () => {
 
 	return (
 		<>
-	<Navbar />
-	<Routes>
-      <Route>
-        <Route path='/' exact component={Home} />
-        <Route path='/game' component={Game} />
-        <Route path='/test'  />
-        <Route path='/goats' />
-      </Route>
-    </Routes>
+			<Navbar />
 			<Title />
 			<div className='app--container'>
 				<Routes>
