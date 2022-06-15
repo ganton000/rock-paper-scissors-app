@@ -6,41 +6,4 @@
   align-items: center;
   text-transform: uppercase;
 	color: inherit;
-	font-size: 2rem;
-
-  &.sm {
-    width: 32.5%;
-		display: inline-block;
-  }
-  &.md {
-    width: 45.5%;
-    display: inline-block;
-		font-size: 1.5rem;
-  }
-  &.lg {
-    width: 100%;
-    margin: 0 auto;
-		font-size: 2rem;
-  }
-
-  &.login,
-  &.join,
-  &.guest {
-    height: 5rem;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 3px gray;
-    border: 2px solid rgba(191, 191, 191, 0.7);
-	}
-
-  &.login {
-    background: #885053;
-  }
-
-  &.join {
-    background: #1e91d6;
-  }
-
-  &.guest {
-    background: #d999b9;
-  }
 }

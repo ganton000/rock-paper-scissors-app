@@ -6,10 +6,10 @@ import React from 'react';
 -- size: 'sm' || 'md' ||  'lg'
 */
 
-const Button = ({ children, onClick, type, size }) => {
+const Button = ({ children, onClick, className }) => {
   return (
     <button
-      className={`btn ${type} ${size}`}
+      className={`btn ${className}`}
       onClick={onClick}
     >
       {children}
