@@ -18,24 +18,24 @@ const SignUpForm = () => {
   useEffect(() => {
 
     if (!user) return;
-
     const createUser = async (user) => {
-
       try {
-        const response = await gameApi.post('/signup', { ...user });
 
-        console.log(response);
+        const userData = JSON.stringify(user);
+        const response = await gameApi.post('/signup', userData);
 
-        setUser(null);
+        if (response.status === 201) {
+          console.log(`201: ${response.data}`)
+        }
+        console.log(response.data);
+          setUser(null);
 
       } catch (err) {
         console.log(err)
         setUser(null);
       }
     }
-
     createUser(user);
-
   }, [user])
 
   return (

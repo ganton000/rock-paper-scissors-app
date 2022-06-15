@@ -7,7 +7,7 @@ import { createAccessToken, createRefreshToken } from '../utils/authUtils';
 
 const signInUser = async (req: Request, res: Response) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, username } = req.body;
         const user = await prisma.user.findFirst({
             where: {
                 email: email.toLowerCase(),
