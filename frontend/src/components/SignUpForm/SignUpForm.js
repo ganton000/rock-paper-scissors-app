@@ -3,8 +3,11 @@
 
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { gameApi } from '../../apis/gameApi';
 import { useForm } from 'react-hook-form';
+
+import gameApi from '../../api/gameApi';
+
+//email, username, password, firstName, lastName
 
 const SignUpForm = () => {
 
@@ -16,25 +19,40 @@ const SignUpForm = () => {
 
     if (!user) return;
 
-    console.log(user);
+    const createUser = async (user) => {
+
+      try {
+        const response = await gameApi.post('/signup', { ...user });
+
+        console.log(response);
+
+        setUser(null);
+
+      } catch (err) {
+        console.log(err)
+        setUser(null);
+      }
+    }
+
+    createUser(user);
+
   }, [user])
 
   return (
-    <div className="signup--container">
-      <div className="signup--header">
-        <Link style={{ textDecoration: 'none' }} to="/">
-          <img
-            className="back"
-            alt="Back button"
-            src={require('../../images/whitebackarrow.png')}
-          />
-        </Link>
-        <h2 className="top">Join Now and Start Playing Today!</h2>
+    <div className='signup--container'>
+      <div className='signup--header'>
+      <Link style={{textDecoration: 'none'}} to='/'>
+        <img className='back' alt="Back button" src={require('../../images/whitebackarrow.png')} />
+      </Link>
+        <h2 className='top'>Join Now and Start Playing Today!</h2>
       </div>
-                 
+
       <form
       onSubmit={handleSubmit((data) => {
-        try { setUser(data) } catch (e) { throw new Error('Something went wrong') }
+        try { setUser(data) } catch (e) {
+          setUser(null);
+          throw new Error('Something went wrong')
+        }
       })}>
         <div className='name'>
           <label htmlFor="firstName">First Name</label>
