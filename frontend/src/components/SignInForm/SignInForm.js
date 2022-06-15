@@ -17,12 +17,13 @@ const SignInForm = () => {
     }
   });
 
-
   const [user, setUser] = useState(null);
 
   useEffect(() => {
 
     if (!user) return;
+
+    console.log(user)
 
     const signInUser = async (user) => {
 

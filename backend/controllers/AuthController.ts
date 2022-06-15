@@ -14,7 +14,7 @@ const signInUser = async (req: Request, res: Response) => {
         if (username) {
             user = await prisma.user.findFirst({
                 where: {
-                    username: username,
+                    username: username.toLowerCase(),
                 }
             })
         } else if (email) {
