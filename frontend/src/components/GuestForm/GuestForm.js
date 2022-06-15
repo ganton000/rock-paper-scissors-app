@@ -48,7 +48,7 @@ const GuestForm = () => {
           />
         </div>
         <Link
-          to={startGame ? '/Game' : '#'}
+          to={startGame ? '/game' : '#'}
           state={userName}
           className="guest rt-links"
         >
@@ -57,12 +57,12 @@ const GuestForm = () => {
       </form>
       <p className="or"> OR </p>
       <div className="signup--container-btn">
-        <Link className="secondaryGuest rt-links" to="/signIn">
+        <Link className="secondaryGuest rt-links" to="/signin">
           Sign In Now
         </Link>
         <Link
           className="secondaryGuest second rt-links"
-          to="/signUp"
+          to="/signup"
           id="noIcon"
         >
           Sign Up Now
