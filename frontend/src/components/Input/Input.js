@@ -2,7 +2,7 @@ import React from 'react';
 import './Input.scss';
 
 const Input = (props) => {
-  const { onChange, type, htmlFor, value, name, className, required, pattern } =
+  const { onChange, type, htmlFor, value, name, placeholder, className, required, pattern } =
     props;
   const formattedLabel = htmlFor[0].toUpperCase() + htmlFor.slice(1);
   return (
@@ -19,6 +19,7 @@ const Input = (props) => {
         onChange={onChange}
         required={required ? true : false}
         pattern={pattern}
+        placeholder={placeholder}
       />
     </>
   );

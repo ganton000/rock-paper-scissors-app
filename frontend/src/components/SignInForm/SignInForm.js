@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
+import gameApi from '../../api/gameApi';
 import Button from '../Button/Button';
 import ImgIcon from '../ImgIcon/ImgIcon';
 import Input from '../Input/Input';
 
 
 const SignInForm = () => {
-  const [userData, setUserData] = useState({});
-  const handleInputChange = ({ target }) => {
-    const { id, value } = target;
-    setUserData({ ...userData, [id]: value });
-  };
 
-  const { email, username, password } = userData;
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [user, setUser] = useState({});
 
-  const handleSubmitForm = () => {
-    // send form to backend
-    // for now outputting to console
-    console.log(userData);
-  };
 
   return (
     <div className="signup--container">
@@ -30,33 +22,45 @@ const SignInForm = () => {
         </Link>
         <h2 className="top">Login Now and Start Playing!</h2>
       </div>
-      <form>
-        <Input
+      <form
+        onSubmit={handleSubmit((data) => {
+          try { setUser(data) } catch (e) {
+            setUser(null);
+            throw new Error('Something went wrong')
+          }
+        })}>
+        {/*<Input
           onChange={handleInputChange}
           value={email}
           htmlFor="email"
           type="email"
           required
-        />
-        <div className="name">
+        />*/}
+        {/*<div className="name">*/}
           <Input
-            onChange={handleInputChange}
-            value={username}
+            {...register("username",
+              { required: "This is required." }
+            )}
             htmlFor="username"
             type="text"
+            placeholder="Username"
             required
           />
-        </div>
-        <div className="name last">
+          <p>{errors.username?.message}</p>
+        {/*</div>*/}
+        {/*<div className="name last">*/}
           <Input
-            onChange={handleInputChange}
-            value={password}
+            {...register("password",
+            { required: "This is required." }
+            )}
             htmlFor="password"
             type="password"
+            placeholder="Password"
             required
           />
-        </div>
-        <Button onClick={handleSubmitForm} className="signIn">
+          <p>{errors.password?.message}</p>
+        {/*</div>*/}
+        <Button type="submit" className="signIn">
           Sign In
         </Button>
       </form>
