@@ -7,23 +7,14 @@ import { createAccessToken, createRefreshToken } from '../utils/authUtils';
 
 const signInUser = async (req: Request, res: Response) => {
     try {
-        const { email, password, username } = req.body;
+        const { password, username, email } = req.body;
 
-        let user;
 
-        if (username) {
-            user = await prisma.user.findFirst({
-                where: {
-                    username: username.toLowerCase(),
-                }
-            })
-        } else if (email) {
-            user = await prisma.user.findFirst({
-                where: {
-                    email: email.toLowerCase(),
-                }
-            })
-        }
+        const user = await prisma.user.findFirst({
+            where: {
+                OR: [{ username }, { email }]
+            }
+        })
 
         if (!user) {
             res.status(401).json({
