@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors';
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 import { authUtils } from './utils/authUtils';
 import { signUpUser, signInUser, signOutUser } from './controllers/AuthController';
