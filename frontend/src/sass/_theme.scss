@@ -1,20 +1,63 @@
 .default {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-image: url("../images/default.svg");
+
 }
 
 .geometric {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-image: url('../images/geometric.svg');
 }
 
 .mountain {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-image: url('../images/mountain.svg');
 }
 
-.ocean {
-
+.ocean > *{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: black;
     background-image: url('../images/ocean.svg');
 }
 
-.bubble {
+.bubble > *{
+    color:black;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    height: 100%;
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-image: url('../images/bubble.svg');
 }
+

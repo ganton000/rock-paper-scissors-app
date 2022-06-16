@@ -20,7 +20,7 @@ const BackgroundToggle = () => {
     }
     
     return (
-        <div><button onClick={handleClick} >{ theme }</button></div>
+        <div><button id='Toggle'onClick={handleClick} >{ theme }</button></div>
     )
 }
 
