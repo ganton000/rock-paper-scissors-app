@@ -72,7 +72,7 @@ const SignInForm = () => {
               { required: "This is required." }
             )}
             type="text"
-            placeholder="Username"
+            placeholder="Username or Email"
           />
           <p>{errors.username?.message}</p>
         {/*</div>*/}
