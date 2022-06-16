@@ -1,8 +1,10 @@
-button {
+#Toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     right: 1%;
     bottom: 1%;
-    height: .5rem;
-    width: .5rem;
+    font-family: "Indie Flower", cursive, "Roboto", sans-serif;
+
 }
