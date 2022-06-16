@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import gameApi from '../../api/gameApi';
 import Button from '../Button/Button';
 import ImgIcon from '../ImgIcon/ImgIcon';
-import Input from '../Input/Input';
 
 
 const SignInForm = () => {
@@ -23,18 +22,18 @@ const SignInForm = () => {
 
     if (!user) return;
 
-    console.log(user)
-
     const signInUser = async (user) => {
 
       try {
-        const userData = JSON.stringify(user);
-        const response = await gameApi.post('/signin', userData);
-        console.log(response)
-        console.log(response.data)
+
+        console.log(user);
+        if (user.username.includes('@')) { user['email'] = user.username }
+
+        const response = await gameApi.post('/signin', user);
+
+        console.log(response);
+
         if (response.status === 200) {
-          console.log(response)
-          console.log(response.data)
           reset();
           setUser(null);
         }
@@ -72,11 +71,9 @@ const SignInForm = () => {
               { required: "This is required." }
             )}
             type="text"
-            placeholder="Username"
+            placeholder="Username or Email"
           />
           <p>{errors.username?.message}</p>
-        {/*</div>*/}
-        {/*<div className="name last">*/}
           <input
             {...register("password",
             { required: "This is required." }
