@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Input from '../Input/Input';
 import ImgIcon from '../ImgIcon/ImgIcon';
 import icons from '../../utils/icons';
 const { goBack } = icons;
@@ -32,7 +31,7 @@ const GuestForm = () => {
       </div>
       <form>
         <div className="name">
-          <Input
+          <input
             type="text"
             htmlFor="firstName"
             onChange={handleNameChange}
@@ -40,7 +39,7 @@ const GuestForm = () => {
           />
         </div>
         <div className="name last">
-          <Input
+          <input
             type="text"
             htmlFor="lastName"
             onChange={handleNameChange}
