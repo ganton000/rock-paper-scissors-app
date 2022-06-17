@@ -1,4 +1,5 @@
 import goBack from '../images/whitebackarrow.png';
+import goBackBlack from '../images/back-button.png'
 import google from '../images/google.png'
 import facebook from '../images/facebook-logo.png';
 
@@ -10,6 +11,10 @@ const icons = {
   goBack: {
     src: goBack,
     alt: 'go back icon',
+  },
+  goBackBlack: {
+    src: goBackBlack,
+    alt: 'go back black icon'
   },
   google: {
     src: google,

@@ -1,7 +1,5 @@
 import React from 'react';
-
 import icons from '../../utils/icons';
-import './ImgIcon.scss'
 
 const ImgIcon = ({ type, className, size }) => {
   return (
