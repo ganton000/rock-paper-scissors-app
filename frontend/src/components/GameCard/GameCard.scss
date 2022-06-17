@@ -13,11 +13,16 @@
 	margin-left: 5rem;
 	margin-top: 5rem;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.8);
+	opacity: 1;
 	cursor: pointer;
 	//so rotate can push out towards page
 	//FUNCTIONALITY
 	perspective: 150rem;
 	-moz-perspective: 150rem;
+
+	& .notSelected {
+		animation: disappear 4s ease-in;
+	}
 
 	&:active &--front {
 		transform: rotateY(-180deg);
