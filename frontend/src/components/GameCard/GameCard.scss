@@ -20,7 +20,7 @@
 	perspective: 150rem;
 	-moz-perspective: 150rem;
 
-	& .notSelected {
+	&.notSelected {
 		animation: disappear 4s ease-in;
 	}
 
