@@ -19,6 +19,10 @@
 	perspective: 150rem;
 	-moz-perspective: 150rem;
 
+	&.notSelected {
+		animation: disappear 4s ease-in;
+	}
+
 	&:active &--front {
 		transform: rotateY(-180deg);
 	}

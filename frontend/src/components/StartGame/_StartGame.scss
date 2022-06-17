@@ -1,0 +1,16 @@
+button {
+    margin-bottom: 4rem;
+    width: 12rem;
+    height: 6rem;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    background-color: #e6e6e64D;
+    border: 2px solid gray;
+    font-weight: bold;
+    border-radius: 10%;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
