@@ -10,7 +10,7 @@ const INITIAL_ROUND_STATE = {
 	result: null
   };
 
-const PlayGame = ({ handleGameState }) => {
+const PlayGame = ({ handleGameState, handleGameResult }) => {
 
 	const [roundState, setRoundState] = useState(INITIAL_ROUND_STATE);
 
@@ -23,7 +23,7 @@ const PlayGame = ({ handleGameState }) => {
 		const compChoice = emojisArr[Math.floor(Math.random() * 3)];
 
 		if (userChoice === compChoice) {
-			setRoundState(prevState => ({...prevState, userChoice, compChoice, result: "Draw!" }));
+			return setRoundState(prevState => ({...prevState, userChoice, compChoice, result: "Draw!" }));
 		} else if (
 		  (userChoice === "rock" && compChoice === "paper") ||
 		  (userChoice === "paper" && compChoice === "scissors") ||
@@ -44,16 +44,17 @@ const PlayGame = ({ handleGameState }) => {
 		key={idx}
 		emojiType={emoji}
 		compChoice={roundState.compChoice}
-		selectedChoice={roundState.userChoice}
+		userChoice={roundState.userChoice}
 		result={roundState.result}
 		handleClick={playRound}
 		/>
 	))
 
 	//  Best of 3
-	  if (roundState.userScore === 3 || roundState.compScore === 3) {
-		handleGameState('end');
-	  }
+	if (roundState.userScore === 3 || roundState.compScore === 3) {
+		handleGameResult({userScore: roundState.userScore, compScore: roundState.compScore});
+		handleGameState("end")
+	}
 
   	return (
 		<div className='cards--container'>

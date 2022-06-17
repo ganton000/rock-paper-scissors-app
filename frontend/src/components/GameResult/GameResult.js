@@ -2,9 +2,9 @@ import React from 'react'
 
 import Button from '../Button/Button';
 
-const GameResult = ({ gameResult: {compScore, userScore}, handleEndGame}) => {
+const GameResult = ({ gameResult: {userScore, compScore} , handleEndGame}) => {
 
-	const gameResult = (compScore, userScore) => {
+	const endGameMessage = (compScore, userScore) => {
 		if (userScore > compScore) {
 		  return "You Beat the Computer!";
 		} else {
@@ -17,7 +17,7 @@ const GameResult = ({ gameResult: {compScore, userScore}, handleEndGame}) => {
     		<h2>
         		User: {userScore} Computer: {compScore}
     		</h2>
-    		<h2>{gameResult(compScore, userScore)}</h2>
+    		<h2>{endGameMessage(compScore, userScore)}</h2>
 			<button onClick={() => handleEndGame(null)}> Play Again!</button>
     	</div>
   	)

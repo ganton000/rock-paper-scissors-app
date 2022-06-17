@@ -3,15 +3,16 @@ import React from 'react';
 import icons from '../../utils/icons';
 
 const GameCard = ({ emojiType, compChoice, userChoice, result, handleClick }) => {
+
   return (
     <>
       <div
       onClick={() => handleClick(emojiType)}
-      className={emojiType !== userChoice ? "card" : "card notSelected"}>
-        <p className='card--name'>{result ? result : emojiType }</p>
+      className={userChoice && emojiType !== userChoice ? "card notSelected" : "card" }>
+        <p className='card--name'>{userChoice === emojiType ? result : emojiType }</p>
         <img
-        src={icons[compChoice ? compChoice : emojiType].src}
-        alt={icons[compChoice ? compChoice : emojiType].alt}
+        src={icons[userChoice === emojiType ? compChoice : emojiType].src}
+        alt={icons[userChoice === emojiType ? compChoice : emojiType].alt}
         />
       </div>
     </>

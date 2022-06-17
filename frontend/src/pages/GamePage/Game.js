@@ -32,7 +32,9 @@ const Game = () => {
       {
       !gameState ? ( <StartGame handleStart={setGameState} />) :
       gameState === "play" ? (
-          <PlayGame handleGameState={setGameResult} />
+          <PlayGame
+          handleGameState={setGameState}
+          handleGameResult={setGameResult} />
         ) : (
           <GameResult
             gameResult={gameResult}
