@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-const element = document.querySelector('html');
+import icons from '../../utils/icons';
+
+const htmlElement = document.querySelector('html');
+const backIcon = document.getElementsByTagName('a')[4];
 
 const BackgroundToggle = () => {
     const [theme, setTheme] = useState('default')
@@ -11,7 +14,12 @@ const BackgroundToggle = () => {
             const themeList = ['default', 'ocean', 'geometric', 'mountain', 'bubble']
             const idx = themeList.indexOf(prevState)
             const newState = idx === (themeList.length - 1) ? themeList[0] : themeList[idx + 1]
-            element.classList.replace(prevState,newState)
+            htmlElement.classList.replace(prevState,newState)
+            if (["ocean", "bubble"].includes(newState)) {
+                backIcon.firstChild.src = icons["goBackBlack"].src
+            } else {
+                backIcon.firstChild.src = icons["goBack"].src
+            }
             return newState
         })
         
