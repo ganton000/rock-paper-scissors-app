@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import ImgIcon from '../ImgIcon/ImgIcon';
 import icons from '../../utils/icons';
 const { goBack } = icons;
+const element = document.querySelector('html');
+console.log(element.className)
 
 const GuestForm = () => {
   const [userName, setUserName] = useState({});
@@ -34,7 +36,6 @@ const GuestForm = () => {
           <input
             type="text"
             htmlFor="firstName"
-            onChange={handleNameChange}
             placeholder="First Name"
             required
           />
