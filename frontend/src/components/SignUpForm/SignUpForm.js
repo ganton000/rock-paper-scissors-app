@@ -65,35 +65,30 @@ const SignUpForm = () => {
         }
       })}>
         <div className='name'>
-          <label htmlFor="firstName">First Name</label>
           <input
           { ...register("firstName",
             { required: "This is required." }
           )}
-          id='firstName' type='text' />
+          id='firstName' type='text' placeholder="First Name"/>
           <p>{errors.firstName?.message}</p>
         </div>
 
         <div className='name last'>
-          <label htmlFor="lastName">Last Name</label>
           <input
           { ...register("lastName",
             { required: "This is required." }
           )}
-          id='lastName' type='text' />
+          id='lastName' type='text' placeholder="Last Name"/>
           <p>{errors.lastName?.message}</p>
         </div>
-
-        <label htmlFor="email">Email</label>
         <input
          {...register("email",
          { required: "This is required." }
          )}
-        id='email' type='email' />
+        id='email' type='email' placeholder="Email" />
         <p>{errors.email?.message}</p>
 
         <div className='name'>
-          <label htmlFor="username">Username</label>
           <input
            {...register("username", {
             required: "This is required.",
@@ -102,12 +97,11 @@ const SignUpForm = () => {
               message: "Min. length of 4 characters"
             }
           })}
-          id='username' type='text' />
+          id='username' type='text' placeholder="Username"/>
           <p>{errors.username?.message}</p>
         </div>
 
         <div className='name last'>
-          <label htmlFor="password" >Password</label>
           <input
           {...register("password", {
             required: "This is required.",
@@ -116,11 +110,11 @@ const SignUpForm = () => {
               message: "Min. length of 8 characters, at least one letter and one number"
             }
           })}
-          id='password' type='password' />
+          id='password' type='password' placeholder="Password"/>
           <p>{errors.password?.message}</p>
         </div>
 
-        <button type='submit' className='signUp'>Sign Up</button>
+        <button type='submit' className='signUp'>SIGN UP</button>
       </form>
 
       <p className='or'> OR </p>
@@ -128,12 +122,12 @@ const SignUpForm = () => {
       <div className='signup--container-btn'>
 
         <button className='secondaryUp'>
-          Sign up with Google
+          SIGN UP WITH GOOGLE
           <img className='icon' alt='back button'src={require('../../images/google.png')} />
         </button>
 
         <button className='secondaryUp second'>
-          Sign up with Facebook
+          SIGN UP WITH FACEBOOK
            <img className='icon' alt='Facebook'src={require('../../images/facebook-logo.png')} />
         </button>
       </div>

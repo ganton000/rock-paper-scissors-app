@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 const element = document.querySelector('html');
 
-
 const BackgroundToggle = () => {
     const [theme, setTheme] = useState('default')
 

@@ -30,7 +30,6 @@
 }
 
 .top {
-	color: white;
 	font-size: 3.5rem;
 	margin-top: 2rem;
 }
@@ -53,17 +52,7 @@
 	margin: 0 auto;
 	border-radius: 0.5rem;
 	border: 2px solid rgba(191, 191, 191, 0.7);
-	//box-shadow: 2px 2px 3px gray;
-}
-
-label {
-	font-size: 2rem;
-	font-weight: bold;
-	width: 55rem;
-	text-align: left;
-	font-family: 'Roboto', sans-serif;
-	color: white;
-	display: block;
+	color: whitesmoke;
 }
 
 input {
@@ -103,6 +92,8 @@ form {
 	display: inline-block;
 	text-align: center;
 	padding-bottom: 1rem;
+	color: whitesmoke;
+	font-size: 1.8rem;
 	//box-shadow: 2px 2px 3px gray;
 }
 
@@ -113,7 +104,7 @@ form {
 }
 
 .or {
-	color: white;
+	color: whitesmoke;
 	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5rem;

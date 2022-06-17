@@ -35,6 +35,7 @@ const GuestForm = () => {
             type="text"
             htmlFor="firstName"
             onChange={handleNameChange}
+            placeholder="First Name"
             required
           />
         </div>
@@ -43,6 +44,7 @@ const GuestForm = () => {
             type="text"
             htmlFor="lastName"
             onChange={handleNameChange}
+            placeholder="Last Name"
             required
           />
         </div>
