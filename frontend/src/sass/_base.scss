@@ -49,9 +49,70 @@ h2, h4 {
    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
+p {
+   font-weight: 500;
+   font-size: $font-size-xsm;
+}
+
+form {
+	width: 60vw;
+}
+
 input {
+   height: 3.5rem;
+   width: 55rem;
+   border-radius: 0.5rem;
+   background-color: whitesmoke;
+   border: 2px solid rgba(191, 191, 191, 0.7);
+   margin-bottom: 1rem;
+   color: $color-grey-dark-3;
+   //box-shadow: 2px 2px 3px gray;
    font-family: 'Roboto', sans-serif;
    font-size: 2rem;
-   font-weight: 600;
+   font-weight: 700;
    padding-left: 1rem;
+   border-bottom: 4px solid transparent;
+   display: block;
+   transition: all .3s;
+
+   &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black,.1);
+      border-bottom: 4px solid $color-pink-dark;
+   }
+
+   &:focus:invalid {
+      border-bottom: 4px solid $color-orange-dark;
+   }
+
+   &::-webkit-input-placeholder{
+      color: $color-grey-dark-1;
+   }
 }
+
+label {
+   font-family: 'Roboto', sans-serif;
+   font-size: 2rem;
+   font-weight: 700;
+   margin-left: 1rem;
+   display: block;
+   transition: all .5s;
+
+   + p {
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+}
+
+//+ is adjacent sibling selector.
+//~ is general sibling selector.
+input:placeholder-shown {
+
+   & ~ label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+   }
+}
+

@@ -7,8 +7,6 @@ import { useForm } from 'react-hook-form';
 
 import gameApi from '../../api/gameApi';
 
-//email, username, password, firstName, lastName
-
 const SignUpForm = () => {
 
   const [user, setUser] = useState(null);
@@ -70,6 +68,7 @@ const SignUpForm = () => {
             { required: "This is required." }
           )}
           id='firstName' type='text' placeholder="First Name"/>
+          <label htmlFor="firstName">First Name</label>
           <p>{errors.firstName?.message}</p>
         </div>
 
@@ -79,6 +78,7 @@ const SignUpForm = () => {
             { required: "This is required." }
           )}
           id='lastName' type='text' placeholder="Last Name"/>
+          <label htmlFor="lastName">Last Name</label>
           <p>{errors.lastName?.message}</p>
         </div>
         <input
@@ -86,6 +86,7 @@ const SignUpForm = () => {
          { required: "This is required." }
          )}
         id='email' type='email' placeholder="Email" />
+        <label htmlFor="email">Email</label>
         <p>{errors.email?.message}</p>
 
         <div className='name'>
@@ -98,6 +99,7 @@ const SignUpForm = () => {
             }
           })}
           id='username' type='text' placeholder="Username"/>
+          <label htmlFor="Username">Username</label>
           <p>{errors.username?.message}</p>
         </div>
 
@@ -111,6 +113,7 @@ const SignUpForm = () => {
             }
           })}
           id='password' type='password' placeholder="Password"/>
+          <label htmlFor="password">Password</label>
           <p>{errors.password?.message}</p>
         </div>
 
