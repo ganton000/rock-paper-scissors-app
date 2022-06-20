@@ -98,11 +98,11 @@ label {
    display: block;
    transition: all .5s;
 
-   + p {
-      position: absolute;
-      top: 0;
-      left: 0;
-   }
+   //+ p {
+   //   position: absolute;
+   //   top: 0;
+   //   left: 0;
+   //}
 }
 
 //+ is adjacent sibling selector.
