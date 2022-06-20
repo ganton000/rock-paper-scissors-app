@@ -1,15 +1,18 @@
 //COLORS
-$color-pink-light: #D999B9;
-$color-pink-dark: #86325C;
+$color-pink-light: #d999b9;
+$color-pink-dark: #86325c;
 
-$color-blue-light: #1E91D6;
-$color-blue-dark: #12547D;
+$color-blue-light: #1e91d6;
+$color-blue-dark: #12547d;
 
 $color-brown-light: #885053;
-$color-brown-dark: #5A3537;
+$color-brown-dark: #5a3537;
 
 $color-white-light: whitesmoke;
 
+//BREAKPOINTS
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
 //FONTS
 $font-size-xsm: 1.6rem;
@@ -24,8 +27,8 @@ $card-width: calc($card-height/1.2);
 
 //Styling
 .centerflex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
