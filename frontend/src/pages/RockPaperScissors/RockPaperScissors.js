@@ -4,10 +4,9 @@ import StartGame from "../../components/StartGame/StartGame";
 import PlayGame from "../../components/PlayGame/PlayGame";
 import GameResult from "../../components/GameResult/GameResult";
 
-
 const INITIAL_GAME_RESULT = {
   userScore: 0,
-  compScore: 0,
+  compScore: 0
 };
 
 const RockPaperScissors = () => {
@@ -16,9 +15,10 @@ const RockPaperScissors = () => {
   //const { firstName, lastName } = location.state;
 
   const [gameState, setGameState] = useState(null);
-  const [gameResult, setGameResult] = useState(INITIAL_GAME_RESULT);
+  const [gameResult, setGameResult] = useState(INITIAL_GAME_RESULT)
 
   useEffect(() => {
+
     if (gameResult === INITIAL_GAME_RESULT) return;
 
     setGameState("finished");
