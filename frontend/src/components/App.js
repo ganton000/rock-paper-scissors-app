@@ -20,6 +20,7 @@ const App = () => {
 			<div className='app--container'>
 				<Routes>
 					<Route path='/' element={<Home />} />
+					<Route path='auth' element={<Authentication />}/>
 					<Route path="rps" element={<RockPaperScissors />}/>
 					<Route path="ttt" element={<TicTacToe />}/>
 					<Route path='signin' element={<SignInForm />}/>
