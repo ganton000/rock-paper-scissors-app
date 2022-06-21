@@ -70,17 +70,21 @@ const SignInForm = () => {
             {...register("username",
               { required: "This is required." }
             )}
+            id="user-cred"
             type="text"
             placeholder="Username or Email"
           />
+          <label htmlFor="user-cred">Username or Email</label>
           <p>{errors.username?.message}</p>
           <input
             {...register("password",
             { required: "This is required." }
             )}
+            id="password"
             type="password"
             placeholder="Password"
           />
+          <label htmlFor="password">Password</label>
           <p>{errors.password?.message}</p>
         {/*</div>*/}
         <Button type="submit" className="signIn">

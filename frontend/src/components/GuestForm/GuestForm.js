@@ -34,20 +34,24 @@ const GuestForm = () => {
       <form>
         <div className="name">
           <input
+            id="firstName"
             type="text"
             htmlFor="firstName"
             placeholder="First Name"
             required
           />
+          <label htmlFor="firstName">First Name</label>
         </div>
         <div className="name last">
           <input
+            id="lastName"
             type="text"
             htmlFor="lastName"
             onChange={handleNameChange}
             placeholder="Last Name"
             required
           />
+          <label htmlFor="lastName">Last Name</label>
         </div>
         <Link
           to={startGame ? '/game' : '#'}

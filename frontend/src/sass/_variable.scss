@@ -8,11 +8,23 @@ $color-blue-dark: #12547d;
 $color-brown-light: #885053;
 $color-brown-dark: #5a3537;
 
+$color-orange-dark: #ff7730;
+
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
 $color-white-light: whitesmoke;
+
+$color-black: #000;
+
 
 //BREAKPOINTS
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
+
+
 
 //FONTS
 $font-size-xsm: 1.6rem;
@@ -25,7 +37,7 @@ $font-size-lg: 7vw;
 $card-height: 25vh;
 $card-width: calc($card-height/1.2);
 
-//Styling
+//STYLING
 .centerflex {
   display: flex;
   justify-content: center;
