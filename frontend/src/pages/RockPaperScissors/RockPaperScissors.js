@@ -9,7 +9,7 @@ const INITIAL_GAME_RESULT = {
   compScore: 0,
 };
 
-const Game = () => {
+const RockPaperScissors = () => {
   // userName data from guest user
   //const location = useLocation();
   //const { firstName, lastName } = location.state;
@@ -39,4 +39,4 @@ const Game = () => {
   );
 };
 
-export default Game;
+export default RockPaperScissors;
