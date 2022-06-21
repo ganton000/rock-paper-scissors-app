@@ -1,0 +1,33 @@
+.grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	min-width: 45rem;
+	min-height: 45rem;
+}
+
+.box {
+	border: 3px solid whitesmoke;
+	min-width: 15rem;
+	min-height: 15rem;
+
+	&--1, &--2, &--3 {
+		border-top: none;
+	}
+
+	&--1, &--4, &--7 {
+		border-left: none;
+	}
+
+	&--3, &--6, &--9 {
+		border-right: none;
+	}
+
+	&--7, &--8, &--9 {
+		border-bottom: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+		background: $color-pink-dark;
+	}
+}
