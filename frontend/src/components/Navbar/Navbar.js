@@ -19,6 +19,9 @@ const Navbar= () => {
       <li>
         <Link to="/test">Testing Stuff</Link>
       </li>
+      <li>
+        <Link to="/signup">Play now!</Link>
+      </li>
     </ul>
   );
 }
