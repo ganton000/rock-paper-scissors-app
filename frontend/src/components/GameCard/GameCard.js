@@ -10,22 +10,21 @@ const GameCard = ({
   handleClick,
 }) => {
   return (
-    <>
-      <div
-        onClick={() => handleClick(emojiType)}
-        className={
-          userChoice && emojiType !== userChoice ? "card notSelected" : "card"
-        }
-      >
-        <p className="card--name">
-          {userChoice === emojiType ? result : emojiType}
-        </p>
-        <img
-          src={icons[userChoice === emojiType ? compChoice : emojiType].src}
-          alt={icons[userChoice === emojiType ? compChoice : emojiType].alt}
-        />
-      </div>
-    </>
+    <div
+      className={`card${
+        userChoice && emojiType !== userChoice ? " notSelected" : ""
+      }`}
+      onClick={() => handleClick(emojiType)}
+    >
+      <p className="card--name">
+        {userChoice === emojiType ? result : emojiType}
+      </p>
+      <img
+        className="card--image"
+        src={icons[userChoice === emojiType ? compChoice : emojiType].src}
+        alt={icons[userChoice === emojiType ? compChoice : emojiType].alt}
+      />
+    </div>
   );
 };
 
