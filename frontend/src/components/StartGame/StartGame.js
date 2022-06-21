@@ -1,12 +1,16 @@
 import React from 'react'
 
 import Button from '../Button/Button';
+import Title from '../Title/Title';
 
 const StartGame = ({handleStart}) => {
   return (
-	<button onClick={() => handleStart("play")}>
+  <>
+    <Title />
+	  <button onClick={() => handleStart("play")}>
           Play Game
     </button>
+  </>
   )
 }
 
