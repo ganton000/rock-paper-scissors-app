@@ -14,7 +14,7 @@ const Navbar= () => {
         <Link to="/rps">Rock-Paper-Scissors</Link>
       </li>
       <li>
-        <Link to="/leaderboard">Leaderboard</Link>
+        <Link to="/leaderboad">Leaderboard</Link>
       </li>
       <li>
         <Link to="/test">Testing Stuff</Link>

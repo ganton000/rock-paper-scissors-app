@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Authentication from "../pages/Authentication/Authentication";
 import Home from '../pages/Home/Home';
+import Game from '../pages/GamePage/Game';
 import Leaderboard from '../pages/Leaderboard/Leaderboard';
 import RockPaperScissors from '../pages/RockPaperScissors/RockPaperScissors';
 import TicTacToe from '../pages/TicTacToe/TicTacToe';
@@ -26,6 +27,7 @@ const App = () => {
 					<Route path='guest' element={<GuestForm />} />
 					<Route path='leaderboard' element={<Leaderboard />} />
 					<Route path="rps" element={<RockPaperScissors />}/>
+					<Route path="game" element={<Game />}/>
 					<Route path='signin' element={<SignInForm />}/>
 					<Route path='signup' element={<SignUpForm />}/>
 					<Route path='test' element={<Spinner />} />
