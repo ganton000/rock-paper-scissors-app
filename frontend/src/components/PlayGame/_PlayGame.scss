@@ -1,3 +1,11 @@
 .cards--container {
-	display: flex;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    gap: 2rem;
+    margin: 2rem;
+  }
 }
